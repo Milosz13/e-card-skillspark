@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      .container {
+        position: relative;
+        max-width: 360px;
+        background: linear-gradient(
+            0deg,
+            rgba(55, 60, 55, 0.05) 0%,
+            rgba(55, 60, 55, 0.05) 100%
+          ),
+          #fff;
+      }
+
+      .name-container {
+        margin: 34px 24px 34px 24px;
+        position: relative;
+      }
+
+      .name-container h1,
+      .name-container h2 {
+        color: #373c37;
+        font-style: normal;
+        font-weight: 400;
+        font-family: "Atyp Display", sans-serif;
+      }
+
+      .name-container h1 {
+        font-size: 20px;
+        line-height: 20px;
+        padding-bottom: 12px;
+      }
+
+      .name-container h2 {
+        font-size: 16px;
+        line-height: 16px;
+      }
+
+      .name-container .name-arabic {
+        position: absolute;
+        left: 60px;
+        top: 7px;
+        font-size: 20px;
+        opacity: 0;
+      }
+
+      .name-container .position-arabic {
+        position: absolute;
+        left: 60px;
+        top: 40px;
+        font-size: 20px;
+        opacity: 0;
+      }
+
+      .name-container .name-ang {
+        position: absolute;
+        left: 0;
+        top: 0;
+        font-size: 14px;
+      }
+
+      .name-container .position-ang {
+        position: absolute;
+        left: 0;
+        top: 20px;
+        font-size: 14px;
+      }
+
+      @keyframes fadeInOut {
+        0% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0.5;
+        }
+        100% {
+          opacity: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="name-container" id="nameContainer">
+        <h1 class="name-ang">Aamash Mukhtar</h1>
+        <h2 class="position-ang">Managing Director</h2>
+        <h1 class="name-arabic">عامر مختار</h1>
+        <h2 class="position-arabic">المدير العام</h2>
+      </div>
+      <button onclick="toggleNames()" style="position: absolute; top: 100px">
+        Toggle Names
+      </button>
+    </div>
+    <script>
+      function toggleNames() {
+        const nameAngElements = document.querySelectorAll(
+          ".name-ang, .position-ang"
+        );
+        const nameArabicElements = document.querySelectorAll(
+          ".name-arabic, .position-arabic"
+        );
+
+        nameAngElements.forEach((element) => {
+          element.style.animation = fadeInOut;
+        });
+
+        nameArabicElements.forEach((element) => {
+          element.style.opacity = 1;
+        });
+      }
+    </script>
+  </body>
+</html>

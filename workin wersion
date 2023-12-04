@@ -1,0 +1,4855 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>e business card</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      @font-face {
+        font-family: "AtypDisplay";
+        src: url("fonts/AtypDisplay-Regular.woff2") format("woff2"),
+          url("fonts/AtypDispla-Regular.woff") format("woff");
+
+        font-weight: normal;
+        font-style: normal;
+      }
+      @font-face {
+        font-family: "AtypDisplayMedium";
+        src: url("fonts/AtypDisplay-Medium.woff2") format("woff2"),
+          url("fonts/AtypDispla-Medium.woff") format("woff");
+
+        font-weight: normal;
+        font-style: normal;
+      }
+      /* @font-face {
+        font-family: "AtypDisplayLight";
+        src: url("fonts/AtypDisplay-Light.woff2") format("woff2"),
+          url("fonts/AtypDispla-Light.woff") format("woff");
+
+        font-weight: normal;
+        font-style: normal;
+      } */
+
+      @font-face {
+        font-family: "AtypText";
+        src: url("fonts/AtypText-Thin.woff2") format("woff2"),
+          url("fonts/AtypText-Regular.woff") format("woff");
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      .container {
+        position: relative;
+        width: 360px;
+        max-width: 360px;
+        background: linear-gradient(
+            0deg,
+            rgba(55, 60, 55, 0.05) 0%,
+            rgba(55, 60, 55, 0.05) 100%
+          ),
+          #fff;
+          margin: auto;
+
+      }
+
+      .logo {
+        padding: 79px 0 80px 0;
+      }
+
+      .logo img {
+        padding: 0 24px;
+        transition: transform 0.5s ease-in-out;
+        width: 222px;
+        height: 56px;
+      }
+
+      .personal-container {
+        display: flex;
+        padding: 0px 24px;
+        flex-direction: row;
+        align-items: center;
+        gap: 112px;
+        vertical-align: middle;
+      }
+
+      .personal-container button {
+        width: 160px;
+        height: 34px;
+        border-radius: 25px;
+        border: 1px solid #000;
+        line-height: 18px;
+        vertical-align: middle;
+        position: relative;
+      }
+
+      .personal-container button img {
+        position: absolute;
+        top: 2px;
+        left: 10px;
+        transition: transform 0.5s ease-in-out;
+      }
+
+      .personal-container button span {
+        transition: opacity 0.5s ease-in-out;
+      }
+
+      .personal-container button .arabic-text {
+        font-family: "Tajawal", sans-serif;
+        font-size: 20px;
+        position: absolute;
+        top: 6px;
+        left: 45px;
+        opacity: 1;
+      }
+
+      .personal-container button .english-text {
+        font-family: "AtypDisplay", sans-serif;
+        font-size: 14px;
+        opacity: 0;
+      }
+
+      .personal-container button.flipped .arabic-text,
+      .personal-container button.flipped .english-text {
+        opacity: 0;
+      }
+
+      .personal-container button.flipped .english-text {
+        opacity: 1;
+        position: absolute;
+        top: 8px;
+        left: 10px;
+      }
+
+      .name-container {
+        margin: 34px 24px 34px 24px;
+        position: relative;
+      }
+
+      .name-container h1,
+      .name-container h2 {
+        display: block;
+        color: #373c37;
+        font-weight: 400;
+      }
+
+      .name-container h1 {
+        font-size: 20px;
+        line-height: 20px;
+        padding-bottom: 12px;
+        font-family: "AtypDisplayMedium", sans-serif;
+        letter-spacing: 0.8px;
+      }
+
+      .name-container h2 {
+        font-size: 16px;
+        line-height: 16px;
+        font-family: "AtypText", sans-serif;
+      }
+
+      .data-element-container {
+        margin: 0 24px 0 24px;
+      }
+
+      .buttons-container {
+        display: flex;
+        padding: 0px 24px;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 16px;
+        align-self: stretch;
+      }
+
+      .buttons-container button {
+        display: flex;
+        width: 150px;
+        padding: 8px 0px;
+        gap: 8px;
+        background-color: #cdcdc8;
+        border-radius: 25px;
+        border: 0px solid;
+        height: 42px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .buttons-container button img {
+        position: absolute;
+        top: 8px;
+        left: 35px;
+        transition: transform 0.5s ease-in-out;
+      }
+
+      .buttons-container button span {
+        display: flex;
+        transition: opacity 0.5s ease-in-out;
+      }
+
+      .buttons-container button .arabic-text {
+        font-family: "Tajawal", sans-serif;
+        position: absolute;
+        left: 48px;
+        top: 10px;
+        font-size: 20px;
+        opacity: 0;
+        font-style: normal;
+        font-weight: 400;
+      }
+
+      .buttons-container button .english-text {
+        position: absolute;
+        left: 70px;
+        top: 10px;
+        font-size: 18px;
+        font-family: "AtypDisplay", sans-serif;
+        vertical-align: middle;
+      }
+      .contact-container {
+        margin-top: 34px;
+        padding-bottom: 89px;
+      }
+      .data-element-container {
+        border-bottom: 0.5px dashed #cdcdc8;
+        margin-bottom: 10px;
+      }
+
+      .data-element {
+        padding: 8px 12px;
+        position: relative;
+      }
+
+      .data-element a {
+        text-decoration: none;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 18px;
+        color: #373c37;
+        vertical-align: middle;
+        font-family: "AtypDisplay", sans-serif;
+      }
+
+      .data-element img {
+        vertical-align: middle;
+        margin-right: 8px;
+        width: 26px;
+        height: 26px;
+      }
+
+      .floating-buttons {
+        position: absolute;
+        bottom: 75px;
+        right: 15px;
+        transition: right 0.5s ease-in-out;
+      }
+
+      .popup-link-element {
+        font-size: 13px;
+        color: #5a5a5a;
+        font-weight: 400;
+        vertical-align: middle;
+        margin-left: 10px;
+        text-decoration: none;
+      }
+
+      #overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        align-items: center;
+        justify-content: center;
+      }
+
+      #popup {
+        width: 230px;
+        height: 230px;
+        background-color: #fff;
+        padding: 10px;
+      }
+
+      #closeButton {
+        cursor: pointer;
+      }
+
+      .logo-img.flipped {
+        transform: translateX(calc(100% - 84px));
+      }
+
+      /* Add these styles to your existing CSS code */
+      .fade,
+      .fade-in,
+      .fade-out {
+        transition: opacity 0.5s ease-in-out;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="200"
+        height="255"
+        viewBox="0 0 200 255"
+        fill="none"
+        style="position: absolute; top: 0px; left: 160px; opacity: 0.15"
+      >
+        <path
+          d="M348.69 -94L288.91 -94C287.26 -40.34 273.72 8.11001 248.23 51.3C222.82 94.46 188.45 128.77 145.28 154.2C102.12 179.66 53.7 193.25 -5.5809e-05 194.9L-6.10352e-05 254.68C63.6499 253.55 121.9 237.52 174.76 206.52C227.62 175.52 269.55 133.6 300.55 80.76C331.55 27.85 347.6 -30.37 348.69 -94Z"
+          fill="#CDCDC8"
+        />
+      </svg>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="200"
+        height="350"
+        viewBox="0 0 200 350"
+        fill="none"
+        style="position: absolute; top: 280px; left: 160px; opacity: 0.15"
+      >
+        <path
+          d="M-3.05543e-05 0.609955L-3.66503e-05 70.34C51.49 71.99 98.11 85.13 139.87 109.77C181.68 134.39 214.89 167.61 239.52 209.4C264.17 251.16 277.31 297.81 278.96 349.27L348.69 349.27C347.6 285.62 331.55 227.37 300.55 174.53C269.55 121.66 227.63 79.74 174.76 48.72C121.89 17.72 63.65 1.68995 -3.05535e-05 0.599945"
+          fill="#CDCDC8"
+        />
+      </svg>
+
+      <div class="logo">
+        <img
+          src="assets/logo.png"
+          alt=""
+          width="222px"
+          height="56px"
+          class="logo-img"
+        />
+      </div>
+      <div class="personal-container">
+        <img
+          src="assets/photo.png"
+          width="100"
+          height="100"
+          alt="Aamash Mukhtar"
+          class="personal-img"
+        />
+        <button onclick="toggleFloatingButtons()" class="animated-button">
+          <img src="assets/arrow.png" width="26" height="26" />
+          <span class="arabic-text">عربي</span>
+          <span class="english-text">English</span>
+        </button>
+      </div>
+      <div class="name-container" id="nameContainer">
+        <h1 id="name-ang">Aamash Mukhtar</h1>
+        <h2 id="position-ang">Managing Director</h2>
+      </div>
+      <div class="buttons-container">
+        <button onclick="window.location.href='tel:+971 55 414 9343';"
+        >
+          <img src="assets/iphone.png" width="26" height="26" />
+          <span class="english-text">Call</span>
+          <span  class="arabic-text">يتصل</span>
+        </button>
+        <button onclick="location.href='mailto:aamash.mukhtar@skillspark.com';">
+          <img src="assets/imail.png" width="26" height="26" />
+          <span class="arabic-text">رسالة</span>
+          <span class="english-text">E-mail</span>
+        </button>
+      </div>
+      <div class="contact-container">
+        <div class="data-element-container reversed">
+          <div class="data-element">
+            <img src="assets/iphone.png" alt="" height="16" width="16" />
+            <a class="link-element" href="tel:+971 55 414 9343"
+              >+971 55 414 9343</a
+            >
+          </div>
+        </div>
+        <div class="data-element-container">
+          <div class="data-element">
+            <img src="assets/imail.png" alt="" height="16" width="16" />
+            <a class="link-element" href="mailto:aamash.mukhtar@skillspark.com"
+              >aamash.mukhtar@skillspark.com</a
+            >
+          </div>
+        </div>
+        <div class="data-element-container">
+          <div class="data-element">
+            <img src="assets/iwebsite.png" alt="" height="16" width="16" />
+            <a
+              class="link-element"
+              href="https://www.skillspark.com/"
+              target="_blank"
+              >www.skillspark.com</a
+            >
+          </div>
+        </div>
+        <div class="data-element-container">
+          <div class="data-element">
+            <img src="assets/linkedin.png" alt="" height="16" width="16" />
+            <a
+              class="link-element"
+              href="https://www.linkedin.com/in/aamashmukhtar"
+              target="_blank"
+              >aamashmukhtar</a
+            >
+          </div>
+        </div>
+      </div>
+
+      <!-- floating buttons -->
+      <div class="floating-buttons" id="floatingButtons">
+        <a onclick="openPopup()">
+          <img src="assets/share.png" alt="" height="66" width="66" />
+        </a>
+        <a onclick="createContact()" style="display: block" id="downloadLink">
+          <img src="assets/addcontact.png" alt="" height="66" width="66" />
+        </a>
+      </div>
+    </div>
+
+
+    <!--POP UP ELEMENT-->
+    <!-- <div id="overlay">
+      <div id="popup" style="background-color: green">
+        <div style="text-align: right">
+          <img
+            src="assets/linkedin.png"
+            id="closeButton"
+            height="16"
+            width="16"
+            onclick="closePopup()"
+          />
+        </div>
+
+        <div style="vertical-align: middle; padding: 0px 8px 8px 0">
+          <img
+            src="mail.png"
+            alt=""
+            height="20"
+            width="20"
+            style="vertical-align: middle"
+          />
+          <a class="popup-link-element" href="mailto:"
+            ></a
+          >
+        </div>
+        <div style="vertical-align: middle; padding: 8px 8px 8px 0">
+          <img
+            src="sms.png"
+            alt=""
+            height="20"
+            width="20"
+            style="vertical-align: middle"
+          />
+          <a class="popup-link-element" href="sms:+">SMS</a>
+        </div>
+        <div style="vertical-align: middle; padding: 8px 8px 8px 0">
+          <img
+            src="linkedin.png"
+            alt=""
+            height="20"
+            width="20"
+            style="vertical-align: middle"
+          />
+          <a
+            class="popup-link-element"
+            href=""
+            target="_blank"
+            ></a
+          >
+        </div>
+
+        <div style="vertical-align: middle; padding: 8px 8px 8px 0">
+          <img
+            src="copyi.png"
+            alt=""
+            height="20"
+            width="20"
+            style="vertical-align: middle"
+          />
+          <input
+            type="text"
+            id="myInput"
+            value=""
+            style="
+              margin: 0 10px;
+              width: 100px;
+              height: 20px;
+              border: 1px solid #5a5a5a;
+              font-family: Khand;
+              vertical-align: middle;
+            "
+          />
+          <button
+            onclick="copyText()"
+            style="
+              color: #5a5a5a;
+              font-family: Khand;
+              height: 20px;
+              vertical-align: middle;
+            "
+          >
+            Kopiuj
+          </button>
+          <span
+            style="color: #d21e1e; font-family: Khand; font-size: 10px"
+            id="copyMessage"
+          ></span>
+        </div>
+      </div> -->
+    </div>
+    <script>
+      function toggleFloatingButtonPosition() {
+        let floatingButtons = document.getElementById("floatingButtons");
+
+        floatingButtons.style.transition = "right 0.5s ease-in-out";
+        floatingButtons.style.right =
+          parseFloat(
+            getComputedStyle(floatingButtons).right.replace("px", "")
+          ) === 15
+            ? "276px"
+            : "15px";
+      }
+
+      function toggleFloatingButtons() {
+        toggleFloatingButtonPosition();
+        toggleLogoMirrorEffect();
+        rotateArrow();
+        toggleButtonText();
+        animatePersonalImg();
+        animateButton();
+        animateDataElements();
+        animateNameElements();
+      }
+
+      //logo animation
+      function toggleLogoMirrorEffect() {
+        let logo = document.querySelector(".logo-img");
+        logo.classList.toggle("flipped");
+      }
+
+      //arrow img animation
+      function rotateArrow() {
+        let arrow = document.querySelector(".personal-container button img");
+        arrow.style.transition = "transform 0.5s ease-in-out";
+
+        let isRotated = arrow.style.transform.includes("rotate(-180deg)");
+
+        arrow.style.transform = isRotated
+          ? "rotate(0deg)"
+          : "translateX(50px) translateY(2px) rotate(-180deg)";
+      }
+
+      // change text in button animation
+      function animateButtonContainer() {
+        let buttonsContainer = document.querySelector(".buttons-container");
+
+        let isFlipped = document
+          .querySelector(".personal-container button")
+          .classList.contains("flipped");
+
+        buttonsContainer.classList.add("fade-in");
+
+        let buttons = buttonsContainer.querySelectorAll("button");
+
+        buttons.forEach(function (button) {
+          let imgInButton = button.querySelector("img");
+          let arabicText = button.querySelector(".arabic-text");
+          let englishText = button.querySelector(".english-text");
+
+          imgInButton.style.transition = "transform 0.5s ease-in-out";
+          arabicText.style.transition = "opacity 0.5s ease-in-out";
+          englishText.style.transition = "opacity 0.5s ease-in-out";
+
+          if (isFlipped) {
+            imgInButton.style.transform = "translateX(50px)";
+            arabicText.style.opacity = 1;
+            arabicText.style.transform = "translateX(-20px)";
+            englishText.style.opacity = 0;
+          } else {
+            imgInButton.style.transform = "translateX(0)";
+            arabicText.style.opacity = 0;
+            englishText.style.opacity = 1;
+          }
+        });
+      }
+
+      // language change button animation
+      function toggleButtonText() {
+        let button = document.querySelector(".personal-container button");
+        button.classList.toggle("flipped");
+
+        animateButtonContainer();
+      }
+
+      //personal img animation
+      function animatePersonalImg() {
+        let personalImg = document.querySelector(".personal-img");
+        personalImg.style.transition = "transform 0.5s ease-in-out";
+
+        let isTranslated =
+          personalImg.style.transform.includes("translateX(212px)");
+
+        personalImg.style.transform = isTranslated
+          ? "translateX(0)"
+          : "translateX(212px)";
+      }
+
+      //move button animation
+      function animateButton() {
+        let button = document.querySelector(".personal-container button");
+        button.style.transition = "transform 0.5s cubic-bezier(1,1,1,1)";
+
+        // Check if the button is currently translated
+        let isTranslated = button.style.transform.includes("translateX(-210px)");
+
+        button.style.transform = isTranslated
+          ? "translateX(0)"
+          : "translateX(-210px)";
+      }
+
+      // data elements icon's animation
+      function animateDataElements() {
+        let dataElements = document.querySelectorAll(".data-element");
+        dataElements.forEach(function (dataElement) {
+          let imgInDataElement = dataElement.querySelector("img");
+
+          imgInDataElement.style.transition = "transform 0.5s ease-in-out";
+
+          // Check if the dataElement is currently translated
+          let isTranslated =
+            imgInDataElement.style.transform.includes("translateX(1000%)");
+
+          imgInDataElement.style.transform = isTranslated
+            ? "translateX(0)"
+            : "translateX(1000%)";
+        });
+      }
+
+      // name & position animation
+//       function animateNameElements() {
+//   let nameContainer = document.querySelector(".name-container");
+//   let nameH1 = nameContainer.querySelector("h1");
+//   let nameH2 = nameContainer.querySelector("h2");
+
+//   nameH1.style.transition = "opacity 1s ease-in-out, transform 0.5s ease-in-out";
+//   nameH2.style.transition = "opacity 1s ease-in-out, transform 0.5s ease-in-out";
+
+//   let isFlipped = document.querySelector(".personal-container button").classList.contains("flipped");
+
+//   if (isFlipped) {
+//     nameH1.style.transform = "translateX(50%)";
+//     nameH1.textContent = "عامر مختار";
+//     nameH2.style.transform = "translateX(50%)";
+//     nameH2.textContent = "المدير العام";
+//   } else {
+//     nameH1.style.transform = "translateX(0)";
+//     nameH1.textContent = "Aamash Mukhtar";
+//     nameH2.style.transform = "translateX(0)";
+//     nameH2.textContent = "Managing Director";
+//   }
+// }
+
+
+      //   POPUP
+
+      //   function openPopup() {
+      //     document.getElementById("overlay").style.display = "flex";
+      //   }
+
+      function closePopup() {
+        document.getElementById("overlay").style.display = "none";
+      }
+
+      // Copy text
+
+      function copyText() {
+        const inputField = document.getElementById("myInput");
+        const copyMessage = document.getElementById("copyMessage");
+
+        try {
+          document.execCommand("copy");
+
+          copyMessage.textContent = "Skopiowano do schowka";
+
+          setTimeout(function () {
+            copyMessage.textContent = "";
+          }, 1500);
+        } catch (err) {
+          console.error("Błąd podczas kopiowania do schowka:", err);
+          copyMessage.textContent = "Błąd podczas kopiowania do schowka";
+        }
+      }
+
+      //CREATE CONTACT
+
+      function createContact() {
+        const contactName = "";
+        const phoneNumber = "";
+        const emailAddress = "";
+        const homepage = "";
+
+        const vCardContent =
+          "BEGIN:VCARD\n" +
+          "VERSION:3.0\n" +
+          "FN:" +
+          contactName +
+          "\n" +
+          "TEL:" +
+          phoneNumber +
+          "\n" +
+          "EMAIL:" +
+          emailAddress +
+          "\n" +
+          (homepage ? "URL:" + homepage + "\n" : "") +
+          "END:VCARD";
+
+        const blob = new Blob([vCardContent], { type: "text/vcard" });
+
+        const link = document.getElementById("downloadLink");
+        link.href = window.URL.createObjectURL(blob);
+        link.download = "contact.vcf";
+
+        link.onclick = function () {
+          document.getElementById("overlay").style.display = "none";
+        };
+      }
+    </script>
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>e business card</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      @font-face {
+        font-family: "AtypDisplay";
+        src: url("fonts/AtypDisplay-Regular.woff2") format("woff2"),
+          url("fonts/AtypDispla-Regular.woff") format("woff");
+
+        font-weight: normal;
+        font-style: normal;
+      }
+      @font-face {
+        font-family: "AtypDisplayMedium";
+        src: url("fonts/AtypDisplay-Medium.woff2") format("woff2"),
+          url("fonts/AtypDispla-Medium.woff") format("woff");
+
+        font-weight: normal;
+        font-style: normal;
+      }
+      /* @font-face {
+        font-family: "AtypDisplayLight";
+        src: url("fonts/AtypDisplay-Light.woff2") format("woff2"),
+          url("fonts/AtypDispla-Light.woff") format("woff");
+
+        font-weight: normal;
+        font-style: normal;
+      } */
+
+      @font-face {
+        font-family: "AtypText";
+        src: url("fonts/AtypText-Thin.woff2") format("woff2"),
+          url("fonts/AtypText-Regular.woff") format("woff");
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      .container {
+        position: relative;
+        max-width: 360px;
+        background: linear-gradient(
+            0deg,
+            rgba(55, 60, 55, 0.05) 0%,
+            rgba(55, 60, 55, 0.05) 100%
+          ),
+          #fff;
+      }
+
+      .logo {
+        padding: 79px 0 80px 0;
+      }
+
+      .logo img {
+        padding: 0 24px;
+        transition: transform 0.5s ease-in-out;
+        width: 222px;
+        height: 56px;
+      }
+
+
+
+      .personal-container {
+        display: flex;
+        padding: 0px 24px;
+        flex-direction: row;
+        align-items: center;
+        gap: 112px;
+        vertical-align: middle;
+      }
+
+      .personal-container button {
+        width: 160px;
+        height: 34px;
+        border-radius: 25px;
+        border: 1px solid #000;
+        line-height: 18px;
+        vertical-align: middle;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .personal-container button img {
+        position: absolute;
+        top: 2px;
+        left: 10px;
+        transition: transform 0.5s ease-in-out;
+      }
+
+      .personal-container button span {
+        transition: opacity 0.5s ease-in-out;
+      }
+
+      .personal-container button .arabic-text {
+        font-family: "Tajawal", sans-serif;
+        font-size: 20px;
+        position: absolute;
+        top: 6px;
+        left: 45px;
+        opacity: 1;
+      }
+
+      .personal-container button .english-text {
+        font-family: "AtypDisplay", sans-serif;
+        font-size: 14px;
+        opacity: 0;
+      }
+
+      .personal-container button.flipped .arabic-text,
+      .personal-container button.flipped .english-text {
+        opacity: 0;
+      }
+
+      .personal-container button.flipped .english-text {
+        opacity: 1;
+        position: absolute;
+        top: 8px;
+        left: 10px;
+      }
+
+      .name-container {
+        margin: 34px 24px 34px 24px;
+        position: relative;
+      }
+
+      .name-container h1,
+      .name-container h2 {
+        display: block;
+        color: #373c37;
+        font-weight: 400;
+      }
+
+      .name-container h1 {
+        font-size: 20px;
+        line-height: 20px;
+        padding-bottom: 12px;
+        font-family: "AtypDisplayMedium", sans-serif;
+        letter-spacing: 0.8px;
+      }
+
+      .name-container h2 {
+        font-size: 16px;
+        line-height: 16px;
+        font-family: "AtypText", sans-serif;
+      }
+
+      .data-element-container {
+        margin: 0 24px 0 24px;
+      }
+
+      .buttons-container {
+        display: flex;
+        padding: 0px 24px;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 16px;
+        align-self: stretch;
+      }
+
+      .buttons-container button {
+        display: flex;
+        width: 150px;
+        padding: 8px 0px;
+        gap: 8px;
+        background-color: #cdcdc8;
+        border-radius: 25px;
+        border: 0px solid;
+        height: 42px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .buttons-container button img {
+        position: absolute;
+        top: 8px;
+        left: 35px;
+        transition: transform 0.5s ease-in-out;
+      }
+
+      .buttons-container button span {
+        display: flex;
+        transition: opacity 0.5s ease-in-out;
+      }
+
+      .buttons-container button .arabic-text {
+        font-family: "Tajawal", sans-serif;
+        position: absolute;
+        left: 48px;
+        top: 10px;
+        font-size: 20px;
+        opacity: 0;
+        font-style: normal;
+        font-weight: 400;
+      }
+
+      .buttons-container button .english-text {
+        position: absolute;
+        left: 70px;
+        top: 10px;
+        font-size: 18px;
+        font-family: "AtypDisplay", sans-serif;
+        vertical-align: middle;
+      }
+      .contact-container {
+        margin-top: 34px;
+        padding-bottom: 89px;
+      }
+      .data-element-container {
+        border-bottom: 0.5px dashed #cdcdc8;
+        margin-bottom: 10px;
+      }
+
+      .data-element {
+        padding: 8px 12px;
+        position: relative;
+      }
+
+      .data-element a {
+        text-decoration: none;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 18px;
+        color: #373c37;
+        vertical-align: middle;
+        font-family: "AtypDisplay", sans-serif;
+      }
+
+      .data-element img {
+        vertical-align: middle;
+        margin-right: 8px;
+        width: 26px;
+        height: 26px;
+      }
+
+      .floating-buttons {
+        position: absolute;
+        bottom: 75px;
+        right: 15px;
+        transition: right 0.5s ease-in-out;
+      }
+
+      .popup-link-element {
+        font-size: 13px;
+        color: #5a5a5a;
+        font-weight: 400;
+        vertical-align: middle;
+        margin-left: 10px;
+        text-decoration: none;
+      }
+
+      #overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        align-items: center;
+        justify-content: center;
+      }
+
+      #popup {
+        width: 230px;
+        height: 230px;
+        background-color: #fff;
+        padding: 10px;
+      }
+
+      #closeButton {
+        cursor: pointer;
+      }
+
+      .logo-img.flipped {
+        transform: translateX(calc(100% - 84px));
+      }
+
+      /* Add these styles to your existing CSS code */
+      .fade,
+      .fade-in,
+      .fade-out {
+        transition: opacity 0.5s ease-in-out;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="200"
+        height="255"
+        viewBox="0 0 200 255"
+        fill="none"
+        style="position: absolute; top: 0px; left: 160px; opacity: 0.15"
+      >
+        <path
+          d="M348.69 -94L288.91 -94C287.26 -40.34 273.72 8.11001 248.23 51.3C222.82 94.46 188.45 128.77 145.28 154.2C102.12 179.66 53.7 193.25 -5.5809e-05 194.9L-6.10352e-05 254.68C63.6499 253.55 121.9 237.52 174.76 206.52C227.62 175.52 269.55 133.6 300.55 80.76C331.55 27.85 347.6 -30.37 348.69 -94Z"
+          fill="#CDCDC8"
+        />
+      </svg>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="200"
+        height="350"
+        viewBox="0 0 200 350"
+        fill="none"
+        style="position: absolute; top: 280px; left: 160px; opacity: 0.15"
+      >
+        <path
+          d="M-3.05543e-05 0.609955L-3.66503e-05 70.34C51.49 71.99 98.11 85.13 139.87 109.77C181.68 134.39 214.89 167.61 239.52 209.4C264.17 251.16 277.31 297.81 278.96 349.27L348.69 349.27C347.6 285.62 331.55 227.37 300.55 174.53C269.55 121.66 227.63 79.74 174.76 48.72C121.89 17.72 63.65 1.68995 -3.05535e-05 0.599945"
+          fill="#CDCDC8"
+        />
+      </svg>
+
+      <div class="logo">
+        <img
+          src="assets/logo.png"
+          alt=""
+          width="222px"
+          height="56px"
+          class="logo-img"
+        />
+      </div>
+      <div class="personal-container">
+        <img
+          src="assets/photo.png"
+          width="100"
+          height="100"
+          alt="Aamash Mukhtar"
+          class="personal-img"
+        />
+        <button onclick="toggleFloatingButtons()" class="animated-button">
+          <img src="assets/arrow.png" width="26" height="26" />
+          <span class="arabic-text">عربي</span>
+          <span class="english-text">English</span>
+        </button>
+      </div>
+      <div class="name-container" id="nameContainer">
+        <h1 id="name-ang">Aamash Mukhtar</h1>
+        <h2 id="position-ang">Managing Director</h2>
+      </div>
+      <div class="buttons-container">
+        <button onclick="window.location.href='tel:+971 55 414 9343';"
+        >
+          <img src="assets/iphone.png" width="26" height="26" />
+          <span class="english-text">Call</span>
+          <span  class="arabic-text">يتصل</span>
+        </button>
+        <button onclick="location.href='mailto:aamash.mukhtar@skillspark.com';">
+          <img src="assets/imail.png" width="26" height="26" />
+          <span class="arabic-text">رسالة</span>
+          <span class="english-text">E-mail</span>
+        </button>
+      </div>
+      <div class="contact-container">
+        <div class="data-element-container reversed">
+          <div class="data-element">
+            <img src="assets/iphone.png" alt="" height="16" width="16" />
+            <a class="link-element" href="tel:+971 55 414 9343"
+              >+971 55 414 9343</a
+            >
+          </div>
+        </div>
+        <div class="data-element-container">
+          <div class="data-element">
+            <img src="assets/imail.png" alt="" height="16" width="16" />
+            <a class="link-element" href="mailto:aamash.mukhtar@skillspark.com"
+              >aamash.mukhtar@skillspark.com</a
+            >
+          </div>
+        </div>
+        <div class="data-element-container">
+          <div class="data-element">
+            <img src="assets/iwebsite.png" alt="" height="16" width="16" />
+            <a
+              class="link-element"
+              href="https://www.skillspark.com/"
+              target="_blank"
+              >www.skillspark.com</a
+            >
+          </div>
+        </div>
+        <div class="data-element-container">
+          <div class="data-element">
+            <img src="assets/linkedin.png" alt="" height="16" width="16" />
+            <a
+              class="link-element"
+              href="https://www.linkedin.com/in/aamashmukhtar"
+              target="_blank"
+              >aamashmukhtar</a
+            >
+          </div>
+        </div>
+      </div>
+
+      <!-- floating buttons -->
+      <div class="floating-buttons" id="floatingButtons">
+        <a onclick="openPopup()">
+          <img src="assets/share.png" alt="" height="66" width="66" />
+        </a>
+        <a onclick="createContact()" style="display: block" id="downloadLink">
+          <img src="assets/addcontact.png" alt="" height="66" width="66" />
+        </a>
+      </div>
+    </div>
+
+
+    <!--POP UP ELEMENT-->
+    <!-- <div id="overlay">
+      <div id="popup" style="background-color: green">
+        <div style="text-align: right">
+          <img
+            src="assets/linkedin.png"
+            id="closeButton"
+            height="16"
+            width="16"
+            onclick="closePopup()"
+          />
+        </div>
+
+        <div style="vertical-align: middle; padding: 0px 8px 8px 0">
+          <img
+            src="mail.png"
+            alt=""
+            height="20"
+            width="20"
+            style="vertical-align: middle"
+          />
+          <a class="popup-link-element" href="mailto:"
+            ></a
+          >
+        </div>
+        <div style="vertical-align: middle; padding: 8px 8px 8px 0">
+          <img
+            src="sms.png"
+            alt=""
+            height="20"
+            width="20"
+            style="vertical-align: middle"
+          />
+          <a class="popup-link-element" href="sms:+">SMS</a>
+        </div>
+        <div style="vertical-align: middle; padding: 8px 8px 8px 0">
+          <img
+            src="linkedin.png"
+            alt=""
+            height="20"
+            width="20"
+            style="vertical-align: middle"
+          />
+          <a
+            class="popup-link-element"
+            href=""
+            target="_blank"
+            ></a
+          >
+        </div>
+
+        <div style="vertical-align: middle; padding: 8px 8px 8px 0">
+          <img
+            src="copyi.png"
+            alt=""
+            height="20"
+            width="20"
+            style="vertical-align: middle"
+          />
+          <input
+            type="text"
+            id="myInput"
+            value=""
+            style="
+              margin: 0 10px;
+              width: 100px;
+              height: 20px;
+              border: 1px solid #5a5a5a;
+              font-family: Khand;
+              vertical-align: middle;
+            "
+          />
+          <button
+            onclick="copyText()"
+            style="
+              color: #5a5a5a;
+              font-family: Khand;
+              height: 20px;
+              vertical-align: middle;
+            "
+          >
+            Kopiuj
+          </button>
+          <span
+            style="color: #d21e1e; font-family: Khand; font-size: 10px"
+            id="copyMessage"
+          ></span>
+        </div>
+      </div> -->
+    </div>
+    <script>
+      function toggleFloatingButtonPosition() {
+        let floatingButtons = document.getElementById("floatingButtons");
+
+        floatingButtons.style.transition = "right 0.5s ease-in-out";
+        floatingButtons.style.right =
+          parseFloat(
+            getComputedStyle(floatingButtons).right.replace("px", "")
+          ) === 15
+            ? "276px"
+            : "15px";
+      }
+
+      function toggleFloatingButtons() {
+        toggleFloatingButtonPosition();
+        toggleLogoMirrorEffect();
+        rotateArrow();
+        toggleButtonText();
+        animatePersonalImg();
+        animateButton();
+        animateDataElements();
+        animateNameElements();
+      }
+
+      //logo animation
+      function toggleLogoMirrorEffect() {
+        let logo = document.querySelector(".logo-img");
+        logo.classList.toggle("flipped");
+      }
+
+      //arrow img animation
+      function rotateArrow() {
+        let arrow = document.querySelector(".personal-container button img");
+        arrow.style.transition = "transform 0.5s ease-in-out";
+
+        let isRotated = arrow.style.transform.includes("rotate(-180deg)");
+
+        arrow.style.transform = isRotated
+          ? "rotate(0deg)"
+          : "translateX(50px) translateY(2px) rotate(-180deg)";
+      }
+
+      // change text in button animation
+      function animateButtonContainer() {
+        let buttonsContainer = document.querySelector(".buttons-container");
+
+        let isFlipped = document
+          .querySelector(".personal-container button")
+          .classList.contains("flipped");
+
+        buttonsContainer.classList.add("fade-in");
+
+        let buttons = buttonsContainer.querySelectorAll("button");
+
+        buttons.forEach(function (button) {
+          let imgInButton = button.querySelector("img");
+          let arabicText = button.querySelector(".arabic-text");
+          let englishText = button.querySelector(".english-text");
+
+          imgInButton.style.transition = "transform 0.5s ease-in-out";
+          arabicText.style.transition = "opacity 0.5s ease-in-out";
+          englishText.style.transition = "opacity 0.5s ease-in-out";
+
+          if (isFlipped) {
+            imgInButton.style.transform = "translateX(50px)";
+            arabicText.style.opacity = 1;
+            arabicText.style.transform = "translateX(-20px)";
+            englishText.style.opacity = 0;
+          } else {
+            imgInButton.style.transform = "translateX(0)";
+            arabicText.style.opacity = 0;
+            englishText.style.opacity = 1;
+          }
+        });
+      }
+
+      // language change button animation
+      function toggleButtonText() {
+        let button = document.querySelector(".personal-container button");
+        button.classList.toggle("flipped");
+
+        animateButtonContainer();
+      }
+
+      //personal img animation
+      function animatePersonalImg() {
+        let personalImg = document.querySelector(".personal-img");
+        personalImg.style.transition = "transform 0.5s ease-in-out";
+
+        let isTranslated =
+          personalImg.style.transform.includes("translateX(212px)");
+
+        personalImg.style.transform = isTranslated
+          ? "translateX(0)"
+          : "translateX(212px)";
+      }
+
+      //move button animation
+      function animateButton() {
+        let button = document.querySelector(".personal-container button");
+        button.style.transition = "transform 0.5s cubic-bezier(1,1,1,1)";
+
+        // Check if the button is currently translated
+        let isTranslated = button.style.transform.includes("translateX(-200%)");
+
+        button.style.transform = isTranslated
+          ? "translateX(0)"
+          : "translateX(-200%)";
+      }
+
+      // data elements icon's animation
+      function animateDataElements() {
+        let dataElements = document.querySelectorAll(".data-element");
+        dataElements.forEach(function (dataElement) {
+          let imgInDataElement = dataElement.querySelector("img");
+
+          imgInDataElement.style.transition = "transform 0.5s ease-in-out";
+
+          // Check if the dataElement is currently translated
+          let isTranslated =
+            imgInDataElement.style.transform.includes("translateX(1000%)");
+
+          imgInDataElement.style.transform = isTranslated
+            ? "translateX(0)"
+            : "translateX(1000%)";
+        });
+      }
+
+      // name & position animation
+//       function animateNameElements() {
+//   let nameContainer = document.querySelector(".name-container");
+//   let nameH1 = nameContainer.querySelector("h1");
+//   let nameH2 = nameContainer.querySelector("h2");
+
+//   nameH1.style.transition = "opacity 1s ease-in-out, transform 0.5s ease-in-out";
+//   nameH2.style.transition = "opacity 1s ease-in-out, transform 0.5s ease-in-out";
+
+//   let isFlipped = document.querySelector(".personal-container button").classList.contains("flipped");
+
+//   if (isFlipped) {
+//     nameH1.style.transform = "translateX(50%)";
+//     nameH1.textContent = "عامر مختار";
+//     nameH2.style.transform = "translateX(50%)";
+//     nameH2.textContent = "المدير العام";
+//   } else {
+//     nameH1.style.transform = "translateX(0)";
+//     nameH1.textContent = "Aamash Mukhtar";
+//     nameH2.style.transform = "translateX(0)";
+//     nameH2.textContent = "Managing Director";
+//   }
+// }
+
+
+      //   POPUP
+
+      //   function openPopup() {
+      //     document.getElementById("overlay").style.display = "flex";
+      //   }
+
+      function closePopup() {
+        document.getElementById("overlay").style.display = "none";
+      }
+
+      // Copy text
+
+      function copyText() {
+        const inputField = document.getElementById("myInput");
+        const copyMessage = document.getElementById("copyMessage");
+
+        try {
+          document.execCommand("copy");
+
+          copyMessage.textContent = "Skopiowano do schowka";
+
+          setTimeout(function () {
+            copyMessage.textContent = "";
+          }, 1500);
+        } catch (err) {
+          console.error("Błąd podczas kopiowania do schowka:", err);
+          copyMessage.textContent = "Błąd podczas kopiowania do schowka";
+        }
+      }
+
+      //CREATE CONTACT
+
+      function createContact() {
+        const contactName = "";
+        const phoneNumber = "";
+        const emailAddress = "";
+        const homepage = "";
+
+        const vCardContent =
+          "BEGIN:VCARD\n" +
+          "VERSION:3.0\n" +
+          "FN:" +
+          contactName +
+          "\n" +
+          "TEL:" +
+          phoneNumber +
+          "\n" +
+          "EMAIL:" +
+          emailAddress +
+          "\n" +
+          (homepage ? "URL:" + homepage + "\n" : "") +
+          "END:VCARD";
+
+        const blob = new Blob([vCardContent], { type: "text/vcard" });
+
+        const link = document.getElementById("downloadLink");
+        link.href = window.URL.createObjectURL(blob);
+        link.download = "contact.vcf";
+
+        link.onclick = function () {
+          document.getElementById("overlay").style.display = "none";
+        };
+      }
+    </script>
+  </body>
+</html>
+
+
+
+
+
+
+bardziej rozbudowane animacje 
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>e business card</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .container {
+        position: relative;
+        max-width: 360px;
+        background: linear-gradient(
+            0deg,
+            rgba(55, 60, 55, 0.05) 0%,
+            rgba(55, 60, 55, 0.05) 100%
+          ),
+          #fff;
+      }
+
+      .logo {
+        padding: 79px 0 80px 0;
+      }
+      .logo img {
+        padding: 0 24px;
+        transition: transform 0.5s ease-in-out;
+      }
+
+      .logo-img {
+        transform: translateX(0);
+      }
+
+      .personal-container {
+        display: flex;
+        padding: 0px 24px;
+        flex-direction: row;
+        align-items: center;
+        gap: 112px;
+        vertical-align: middle;
+      }
+
+      .personal-container button {
+        width: 160px; /* Zwiększ szerokość przycisku, aby pomieścić obie wersje tekstu */
+        height: 34px;
+        border-radius: 25px;
+        border: 1px solid #000;
+        font-size: 20px;
+        line-height: 18px;
+        vertical-align: middle;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .personal-container button img {
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+
+      .personal-container button span {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: opacity 0.5s ease-in-out;
+      }
+
+      .personal-container button .arabic-text,
+      .personal-container button .english-text {
+        text-align: center;
+        font-size: 20px;
+        opacity: 1;
+      }
+
+      .personal-container button .english-text {
+        font-size: 14px;
+        opacity: 0;
+      }
+
+      .personal-container button.flipped .arabic-text {
+        opacity: 0;
+      }
+
+      .personal-container button.flipped .english-text {
+        opacity: 1;
+        font-size: 14px;
+      }
+
+      .name-container {
+        margin: 34px 24px 34px 24px;
+      }
+
+      .name-container h1 {
+        color: #373c37;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 20px;
+        font-family: "Atyp Display", sans-serif;
+        padding-bottom: 12px;
+      }
+
+      .name-container h2 {
+        color: #373c37;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 16px;
+        font-family: "Atyp text";
+      }
+
+      .buttons-container {
+        margin: 0 24px 0 24px;
+      }
+
+      .contact-container {
+        margin: 0 24px 0 24px;
+      }
+
+      .data-element-container {
+        border-bottom: 0.5px dashed #cdcdc8;
+        margin-bottom: 10px;
+      }
+
+      .data-element {
+        padding: 8px 12px 8px 12px;
+      }
+
+      .data-element a {
+        text-decoration: none;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 18px;
+        color: #373c37;
+        vertical-align: middle;
+      }
+
+      .data-element img {
+        vertical-align: middle;
+        margin-right: 8px;
+        width: 26px;
+        height: 26px;
+      }
+
+      .floating-buttons {
+        position: absolute;
+        right: 24px;
+        bottom: 1px;
+        transition: right 0.5s ease-in-out;
+      }
+
+      .popup-link-element {
+        font-size: 13px;
+        color: #5a5a5a;
+        font-weight: 400;
+        vertical-align: middle;
+        margin-left: 10px;
+        text-decoration: none;
+      }
+
+      #overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        align-items: center;
+        justify-content: center;
+      }
+
+      #popup {
+        width: 230px;
+        height: 230px;
+        background-color: #fff;
+        padding: 10px;
+      }
+
+      #closeButton {
+        cursor: pointer;
+      }
+
+      .logo-img.flipped {
+        transform: translateX(calc(100% - 84px));
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="200"
+        height="255"
+        viewBox="0 0 200 255"
+        fill="none"
+        style="position: absolute; top: 0px; left: 160px; opacity: 0.15"
+      >
+        <path
+          d="M348.69 -94L288.91 -94C287.26 -40.34 273.72 8.11001 248.23 51.3C222.82 94.46 188.45 128.77 145.28 154.2C102.12 179.66 53.7 193.25 -5.5809e-05 194.9L-6.10352e-05 254.68C63.6499 253.55 121.9 237.52 174.76 206.52C227.62 175.52 269.55 133.6 300.55 80.76C331.55 27.85 347.6 -30.37 348.69 -94Z"
+          fill="#CDCDC8"
+        />
+      </svg>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="200"
+        height="350"
+        viewBox="0 0 200 350"
+        fill="none"
+        style="position: absolute; top: 280px; left: 160px; opacity: 0.15"
+      >
+        <path
+          d="M-3.05543e-05 0.609955L-3.66503e-05 70.34C51.49 71.99 98.11 85.13 139.87 109.77C181.68 134.39 214.89 167.61 239.52 209.4C264.17 251.16 277.31 297.81 278.96 349.27L348.69 349.27C347.6 285.62 331.55 227.37 300.55 174.53C269.55 121.66 227.63 79.74 174.76 48.72C121.89 17.72 63.65 1.68995 -3.05535e-05 0.599945"
+          fill="#CDCDC8"
+        />
+      </svg>
+
+      <div class="logo">
+        <img
+          src="assets/logo.png"
+          alt=""
+          width="222px"
+          height="56px"
+          class="logo-img"
+        />
+      </div>
+      <div class="personal-container">
+        <img
+          src="assets/photo.png"
+          width="100"
+          height="100"
+          alt="Aamash Mukhtar"
+          class="personal-img"
+        />
+        <button onclick="toggleFloatingButtons()" class="animated-button">
+          <img src="assets/arrow.png" width="26" height="26" />
+          <span class="arabic-text">عربي</span>
+          <span class="english-text">English</span>
+        </button>
+      </div>
+      <div class="name-container" id="nameContainer">
+        <h1 id="nameH1">Aamash Mukhtar</h1>
+        <h2 id="nameH2">Managing Director</h2>
+      </div>
+      <div class="buttons-container">
+        <img src="assets/callbtn.png" alt="" width="150" height="42" />
+        <img src="assets/mailbtn.png" alt="" width="150" height="42" />
+      </div>
+      <div class="contact-container">
+        <div class="data-element-container reversed">
+          <div class="data-element">
+            <img src="assets/iphone.png" alt="" height="16" width="16" />
+            <a class="link-element" href="tel:+971 55 414 9343"
+              >+971 55 414 9343</a
+            >
+          </div>
+        </div>
+        <div class="data-element-container">
+          <div class="data-element">
+            <img src="assets/imail.png" alt="" height="16" width="16" />
+            <a class="link-element" href="mailto:aamash.mukhtar@skillspark.com"
+              >aamash.mukhtar@skillspark.com</a
+            >
+          </div>
+        </div>
+        <div class="data-element-container">
+          <div class="data-element">
+            <img src="assets/iwebsite.png" alt="" height="16" width="16" />
+            <a
+              class="link-element"
+              href="https://www.skillspark.com/"
+              target="_blank"
+              >www.skillspark.com</a
+            >
+          </div>
+        </div>
+        <div class="data-element-container">
+          <div class="data-element">
+            <img src="assets/linkedin.png" alt="" height="16" width="16" />
+            <a
+              class="link-element"
+              href="https://www.linkedin.com/in/aamashmukhtar"
+              target="_blank"
+              >aamashmukhtar</a
+            >
+          </div>
+        </div>
+      </div>
+
+      <!-- floating buttons -->
+      <div
+        class="floating-buttons"
+        style="right: 24px; bottom: 1px"
+        id="floatingButtons"
+      >
+        <a onclick="openPopup()">
+          <img src="assets/share.png" alt="" height="66" width="66" />
+        </a>
+        <a onclick="createContact()" style="display: block" id="downloadLink">
+          <img src="assets/addcontact.png" alt="" height="66" width="66" />
+        </a>
+      </div>
+    </div>
+    <div id="overlay">
+      <div id="popup" style="background-color: green">
+        <div style="text-align: right">
+          <img
+            src="assets/linkedin.png"
+            id="closeButton"
+            height="16"
+            width="16"
+            onclick="closePopup()"
+          />
+        </div>
+
+        <div style="vertical-align: middle; padding: 0px 8px 8px 0">
+          <img
+            src="mail.png"
+            alt=""
+            height="20"
+            width="20"
+            style="vertical-align: middle"
+          />
+          <a class="popup-link-element" href="mailto:lszymczak@identitygroup.pl"
+            >lszymczak@identitygroup.pl</a
+          >
+        </div>
+        <div style="vertical-align: middle; padding: 8px 8px 8px 0">
+          <img
+            src="sms.png"
+            alt=""
+            height="20"
+            width="20"
+            style="vertical-align: middle"
+          />
+          <a class="popup-link-element" href="sms:+48500170839">SMS</a>
+        </div>
+        <div style="vertical-align: middle; padding: 8px 8px 8px 0">
+          <img
+            src="linkedin.png"
+            alt=""
+            height="20"
+            width="20"
+            style="vertical-align: middle"
+          />
+          <a
+            class="popup-link-element"
+            href="https://pl.linkedin.com/in/lssdesigner"
+            target="_blank"
+            >lszymczak-id</a
+          >
+        </div>
+
+        <div style="vertical-align: middle; padding: 8px 8px 8px 0">
+          <img
+            src="copyi.png"
+            alt=""
+            height="20"
+            width="20"
+            style="vertical-align: middle"
+          />
+          <input
+            type="text"
+            id="myInput"
+            value="https://milosz13.github.io/business-card/"
+            style="
+              margin: 0 10px;
+              width: 100px;
+              height: 20px;
+              border: 1px solid #5a5a5a;
+              font-family: Khand;
+              vertical-align: middle;
+            "
+          />
+          <button
+            onclick="copyText()"
+            style="
+              color: #5a5a5a;
+              font-family: Khand;
+              height: 20px;
+              vertical-align: middle;
+            "
+          >
+            Kopiuj
+          </button>
+          <span
+            style="color: #d21e1e; font-family: Khand; font-size: 10px"
+            id="copyMessage"
+          ></span>
+        </div>
+      </div>
+    </div>
+    <script>
+      function toggleFloatingButtons() {
+        var rightValue = toggleFloatingButtonPosition();
+        toggleLogoMirrorEffect();
+        toggleButtonText();
+        animatePersonalImg(rightValue);
+        animateButton(rightValue);
+        animateDataElements(rightValue);
+        animateNameContainer(rightValue);
+      }
+
+      function toggleButtonText() {
+        var button = document.querySelector(".personal-container button");
+        button.classList.toggle("flipped");
+      }
+
+      function toggleLogoMirrorEffect() {
+        var logo = document.querySelector(".logo-img");
+        logo.classList.toggle("flipped");
+      }
+      function toggleFloatingButtonPosition() {
+        var floatingButtons = document.getElementById("floatingButtons");
+        var rightValue = parseFloat(
+          getComputedStyle(floatingButtons).right.replace("px", "")
+        );
+        floatingButtons.style.right = rightValue === 24 ? "246px" : "24px";
+        return rightValue; // Zwracamy wartość dla użycia w innych funkcjach
+      }
+
+      function animatePersonalImg(rightValue) {
+        var personalImg = document.querySelector(".personal-img");
+        personalImg.style.transition = "transform 0.5s ease-in-out";
+        personalImg.style.transform =
+          rightValue === 24 ? "translateX(200%)" : "translateX(0)";
+      }
+
+      function animateButton(rightValue) {
+        var button = document.querySelector(".personal-container button");
+        button.style.transition = "transform 0.5s ease-in-out";
+        button.style.transform =
+          rightValue === 24 ? "translateX(-200%)" : "translateX(0)";
+      }
+
+      function animateDataElements(rightValue) {
+        var dataElements = document.querySelectorAll(".data-element");
+        dataElements.forEach(function (dataElement) {
+          var imgInDataElement = dataElement.querySelector("img");
+          var aInDataElement = dataElement.querySelector(".data-element a");
+
+          imgInDataElement.style.transition = "transform 0.5s ease-in-out";
+          imgInDataElement.style.transform =
+            rightValue === 24 ? "translateX(1000%)" : "translateX(0)";
+
+          aInDataElement.style.transition = "transform 0.5s ease-in-out";
+          aInDataElement.style.transform =
+            rightValue === 24 ? "translateX(150%)" : "translateX(0)";
+        });
+      }
+      function animateNameContainer(rightValue) {
+        var nameContainer = document.querySelector(".name-container");
+        var nameH1 = nameContainer.querySelector("h1");
+        var nameH2 = nameContainer.querySelector("h2");
+
+        nameH1.style.transition = "transform 0.5s ease-in-out";
+        nameH2.style.transition = "transform 0.5s ease-in-out";
+
+        nameH1.style.transform =
+          rightValue === 24 ? "translateX(50%)" : "translateX(0)";
+        nameH2.style.transform =
+          rightValue === 24 ? "translateX(50%)" : "translateX(0)";
+      }
+
+      function closePopup() {
+        document.getElementById("overlay").style.display = "none";
+      }
+
+      //   POPUP
+
+      //   function openPopup() {
+      //     document.getElementById("overlay").style.display = "flex";
+      //   }
+
+      // Copy text
+
+      function copyText() {
+        const inputField = document.getElementById("myInput");
+        const copyMessage = document.getElementById("copyMessage");
+
+        try {
+          document.execCommand("copy");
+
+          copyMessage.textContent = "Skopiowano do schowka";
+
+          setTimeout(function () {
+            copyMessage.textContent = "";
+          }, 1500);
+        } catch (err) {
+          console.error("Błąd podczas kopiowania do schowka:", err);
+          copyMessage.textContent = "Błąd podczas kopiowania do schowka";
+        }
+      }
+
+      //CREATE CONTACT
+
+      function createContact() {
+        const contactName = "Łukasz Szymczak";
+        const phoneNumber = "+48500170839";
+        const emailAddress = "lszymczak@identitygroup.pl";
+        const homepage = "http://identitygroup.pl/";
+
+        const vCardContent =
+          "BEGIN:VCARD\n" +
+          "VERSION:3.0\n" +
+          "FN:" +
+          contactName +
+          "\n" +
+          "TEL:" +
+          phoneNumber +
+          "\n" +
+          "EMAIL:" +
+          emailAddress +
+          "\n" +
+          (homepage ? "URL:" + homepage + "\n" : "") +
+          "END:VCARD";
+
+        const blob = new Blob([vCardContent], { type: "text/vcard" });
+
+        const link = document.getElementById("downloadLink");
+        link.href = window.URL.createObjectURL(blob);
+        link.download = "contact.vcf";
+
+        link.onclick = function () {
+          document.getElementById("overlay").style.display = "none";
+        };
+      }
+    </script>
+  </body>
+</html>
+
+
+
+
+
+
+last working 
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>e business card</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      .container {
+        position: relative;
+        max-width: 360px;
+        background: linear-gradient(
+            0deg,
+            rgba(55, 60, 55, 0.05) 0%,
+            rgba(55, 60, 55, 0.05) 100%
+          ),
+          #fff;
+      }
+
+      .logo {
+        padding: 79px 0 80px 0;
+      }
+
+      .logo img {
+        padding: 0 24px;
+        transition: transform 0.5s ease-in-out;
+      }
+
+      .logo-img {
+        transform: translateX(0);
+      }
+
+      .personal-container {
+        display: flex;
+        padding: 0px 24px;
+        flex-direction: row;
+        align-items: center;
+        gap: 112px;
+        vertical-align: middle;
+      }
+
+      .personal-container button {
+        width: 160px;
+        height: 34px;
+        border-radius: 25px;
+        border: 1px solid #000;
+        font-size: 20px;
+        line-height: 18px;
+        vertical-align: middle;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .personal-container button img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        transition: transform 0.5s ease-in-out;
+      }
+
+      .personal-container button span {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: opacity 0.5s ease-in-out;
+      }
+
+      .personal-container button .arabic-text,
+      .personal-container button .english-text {
+        text-align: center;
+        font-size: 20px;
+        opacity: 1;
+      }
+
+      .personal-container button .english-text {
+        font-size: 14px;
+        opacity: 0;
+      }
+
+      .personal-container button.flipped .arabic-text,
+      .personal-container button.flipped .english-text {
+        opacity: 0;
+      }
+
+      .personal-container button.flipped .english-text {
+        opacity: 1;
+        font-size: 14px;
+      }
+
+      .name-container {
+        margin: 34px 24px 34px 24px;
+      }
+
+      .name-container h1,
+      .name-container h2 {
+        color: #373c37;
+        font-style: normal;
+        font-weight: 400;
+        font-family: "Atyp Display", sans-serif;
+      }
+
+      .name-container h1 {
+        font-size: 20px;
+        line-height: 20px;
+        padding-bottom: 12px;
+      }
+
+      .name-container h2 {
+        font-size: 16px;
+        line-height: 16px;
+      }
+
+      .data-element-container {
+        margin: 0 24px 0 24px;
+      }
+
+      .buttons-container {
+        display: flex;
+        padding: 0px 24px;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 16px;
+        align-self: stretch;
+      }
+
+      .buttons-container button {
+        display: flex;
+        width: 150px;
+        padding: 8px 0px;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+        background-color: #cdcdc8;
+        border-radius: 25px;
+        border: 0px solid;
+
+        height: 42px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .buttons-container button img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        transition: transform 0.5s ease-in-out;
+      }
+
+      .buttons-container button span {
+        position: absolute;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: opacity 0.5s ease-in-out;
+      }
+
+      .buttons-container button .arabic-text,
+      .buttons-container button .english-text {
+        text-align: center;
+        font-size: 20px;
+        opacity: 1;
+        transition: opacity 0.5s ease-in-out;
+      }
+
+      .buttons-container button .english-text {
+        font-size: 14px;
+        opacity: 0;
+      }
+
+      .buttons-container button.flipped .arabic-text,
+      .buttons-container button.flipped .english-text {
+        opacity: 0;
+      }
+
+      .buttons-container button.flipped .english-text {
+        opacity: 1;
+        font-size: 14px;
+      }
+
+      .data-element-container {
+        border-bottom: 0.5px dashed #cdcdc8;
+        margin-bottom: 10px;
+      }
+
+      .data-element {
+        padding: 8px 12px;
+      }
+
+      .data-element a {
+        text-decoration: none;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 18px;
+        color: #373c37;
+        vertical-align: middle;
+      }
+
+      .data-element img {
+        vertical-align: middle;
+        margin-right: 8px;
+        width: 26px;
+        height: 26px;
+        transition: transform 0.5s ease-in-out;
+      }
+
+      .floating-buttons {
+        position: absolute;
+        right: 24px;
+        bottom: 1px;
+        transition: right 0.5s ease-in-out;
+      }
+
+      .popup-link-element {
+        font-size: 13px;
+        color: #5a5a5a;
+        font-weight: 400;
+        vertical-align: middle;
+        margin-left: 10px;
+        text-decoration: none;
+      }
+
+      #overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        align-items: center;
+        justify-content: center;
+      }
+
+      #popup {
+        width: 230px;
+        height: 230px;
+        background-color: #fff;
+        padding: 10px;
+      }
+
+      #closeButton {
+        cursor: pointer;
+      }
+
+      .logo-img.flipped {
+        transform: translateX(calc(100% - 84px));
+      }
+
+      /* Add these styles to your existing CSS code */
+      .fade,
+      .fade-in,
+      .fade-out {
+        transition: opacity 0.5s ease-in-out;
+      }
+
+      .link-element.flipped {
+        transform: rotateX(100px);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="200"
+        height="255"
+        viewBox="0 0 200 255"
+        fill="none"
+        style="position: absolute; top: 0px; left: 160px; opacity: 0.15"
+      >
+        <path
+          d="M348.69 -94L288.91 -94C287.26 -40.34 273.72 8.11001 248.23 51.3C222.82 94.46 188.45 128.77 145.28 154.2C102.12 179.66 53.7 193.25 -5.5809e-05 194.9L-6.10352e-05 254.68C63.6499 253.55 121.9 237.52 174.76 206.52C227.62 175.52 269.55 133.6 300.55 80.76C331.55 27.85 347.6 -30.37 348.69 -94Z"
+          fill="#CDCDC8"
+        />
+      </svg>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="200"
+        height="350"
+        viewBox="0 0 200 350"
+        fill="none"
+        style="position: absolute; top: 280px; left: 160px; opacity: 0.15"
+      >
+        <path
+          d="M-3.05543e-05 0.609955L-3.66503e-05 70.34C51.49 71.99 98.11 85.13 139.87 109.77C181.68 134.39 214.89 167.61 239.52 209.4C264.17 251.16 277.31 297.81 278.96 349.27L348.69 349.27C347.6 285.62 331.55 227.37 300.55 174.53C269.55 121.66 227.63 79.74 174.76 48.72C121.89 17.72 63.65 1.68995 -3.05535e-05 0.599945"
+          fill="#CDCDC8"
+        />
+      </svg>
+
+      <div class="logo">
+        <img
+          src="assets/logo.png"
+          alt=""
+          width="222px"
+          height="56px"
+          class="logo-img"
+        />
+      </div>
+      <div class="personal-container">
+        <img
+          src="assets/photo.png"
+          width="100"
+          height="100"
+          alt="Aamash Mukhtar"
+          class="personal-img"
+        />
+        <button onclick="toggleFloatingButtons()" class="animated-button">
+          <img src="assets/arrow.png" width="26" height="26" />
+          <span class="arabic-text">عربي</span>
+          <span class="english-text">English</span>
+        </button>
+      </div>
+      <div class="name-container" id="nameContainer">
+        <h1 id="nameH1">Aamash Mukhtar</h1>
+        <h2 id="nameH2">Managing Director</h2>
+      </div>
+      <div class="buttons-container">
+        <button>
+          <img src="assets/iphone.png" width="26" height="26" />
+          <span class="arabic-text">عربي</span>
+          <span class="english-text">phone</span>
+        </button>
+        <button>
+          <img src="assets/imail.png" width="26" height="26" />
+          <span class="arabic-text">عربي</span>
+          <span class="english-text">mail</span>
+        </button>
+      </div>
+      <div class="contact-container">
+        <div class="data-element-container reversed">
+          <div class="data-element">
+            <img src="assets/iphone.png" alt="" height="16" width="16" />
+            <a class="link-element" href="tel:+971 55 414 9343"
+              >+971 55 414 9343</a
+            >
+          </div>
+        </div>
+        <div class="data-element-container">
+          <div class="data-element">
+            <img src="assets/imail.png" alt="" height="16" width="16" />
+            <a class="link-element" href="mailto:aamash.mukhtar@skillspark.com"
+              >aamash.mukhtar@skillspark.com</a
+            >
+          </div>
+        </div>
+        <div class="data-element-container">
+          <div class="data-element">
+            <img src="assets/iwebsite.png" alt="" height="16" width="16" />
+            <a
+              class="link-element"
+              href="https://www.skillspark.com/"
+              target="_blank"
+              >www.skillspark.com</a
+            >
+          </div>
+        </div>
+        <div class="data-element-container">
+          <div class="data-element">
+            <img src="assets/linkedin.png" alt="" height="16" width="16" />
+            <a
+              class="link-element"
+              href="https://www.linkedin.com/in/aamashmukhtar"
+              target="_blank"
+              >aamashmukhtar</a
+            >
+          </div>
+        </div>
+      </div>
+
+      <!-- floating buttons -->
+      <div
+        class="floating-buttons"
+        style="right: 24px; bottom: 1px"
+        id="floatingButtons"
+      >
+        <a onclick="openPopup()">
+          <img src="assets/share.png" alt="" height="66" width="66" />
+        </a>
+        <a onclick="createContact()" style="display: block" id="downloadLink">
+          <img src="assets/addcontact.png" alt="" height="66" width="66" />
+        </a>
+      </div>
+    </div>
+    <div id="overlay">
+      <div id="popup" style="background-color: green">
+        <div style="text-align: right">
+          <img
+            src="assets/linkedin.png"
+            id="closeButton"
+            height="16"
+            width="16"
+            onclick="closePopup()"
+          />
+        </div>
+
+        <div style="vertical-align: middle; padding: 0px 8px 8px 0">
+          <img
+            src="mail.png"
+            alt=""
+            height="20"
+            width="20"
+            style="vertical-align: middle"
+          />
+          <a class="popup-link-element" href="mailto:lszymczak@identitygroup.pl"
+            >lszymczak@identitygroup.pl</a
+          >
+        </div>
+        <div style="vertical-align: middle; padding: 8px 8px 8px 0">
+          <img
+            src="sms.png"
+            alt=""
+            height="20"
+            width="20"
+            style="vertical-align: middle"
+          />
+          <a class="popup-link-element" href="sms:+48500170839">SMS</a>
+        </div>
+        <div style="vertical-align: middle; padding: 8px 8px 8px 0">
+          <img
+            src="linkedin.png"
+            alt=""
+            height="20"
+            width="20"
+            style="vertical-align: middle"
+          />
+          <a
+            class="popup-link-element"
+            href="https://pl.linkedin.com/in/lssdesigner"
+            target="_blank"
+            >lszymczak-id</a
+          >
+        </div>
+
+        <div style="vertical-align: middle; padding: 8px 8px 8px 0">
+          <img
+            src="copyi.png"
+            alt=""
+            height="20"
+            width="20"
+            style="vertical-align: middle"
+          />
+          <input
+            type="text"
+            id="myInput"
+            value="https://milosz13.github.io/business-card/"
+            style="
+              margin: 0 10px;
+              width: 100px;
+              height: 20px;
+              border: 1px solid #5a5a5a;
+              font-family: Khand;
+              vertical-align: middle;
+            "
+          />
+          <button
+            onclick="copyText()"
+            style="
+              color: #5a5a5a;
+              font-family: Khand;
+              height: 20px;
+              vertical-align: middle;
+            "
+          >
+            Kopiuj
+          </button>
+          <span
+            style="color: #d21e1e; font-family: Khand; font-size: 10px"
+            id="copyMessage"
+          ></span>
+        </div>
+      </div>
+    </div>
+    <script>
+      function toggleFloatingButtonPosition() {
+        var floatingButtons = document.getElementById("floatingButtons");
+        var rightValue = parseFloat(
+          getComputedStyle(floatingButtons).right.replace("px", "")
+        );
+        floatingButtons.style.right = rightValue === 24 ? "246px" : "24px";
+        return rightValue;
+      }
+
+      function toggleFloatingButtons() {
+        var rightValue = toggleFloatingButtonPosition();
+        toggleLogoMirrorEffect();
+        toggleButtonText();
+        animatePersonalImg(rightValue);
+        animateButton(rightValue);
+        animateDataElements(rightValue);
+        animateNameContainer(rightValue);
+        rotateArrow(rightValue === 24);
+      }
+
+      function rotateArrow(isRight) {
+        var arrow = document.querySelector(".personal-container button img");
+        arrow.style.transition = "transform 0.5s ease-in-out";
+        arrow.style.transform = isRight
+          ? "translateX(60px) rotate(180deg)"
+          : "rotate(0deg)";
+      }
+
+      // Define Arabic and English versions of name and job title
+      const arabicName = "عمش مختار";
+      const arabicJobTitle = "المدير التنفيذي";
+
+      function toggleButtonText() {
+        var button = document.querySelector(".personal-container button");
+        button.classList.toggle("flipped");
+
+        // Call the function to animate the name text
+        animateNameText();
+
+        // Call the function to animate the button container
+        animateButtonContainer();
+      }
+
+      function animateButtonContainer() {
+        var buttonsContainer = document.querySelector(".buttons-container");
+
+        // Check if the button has the "flipped" class
+        var isFlipped = document
+          .querySelector(".personal-container button")
+          .classList.contains("flipped");
+
+        // Add a class to trigger the CSS transition for opacity
+        buttonsContainer.classList.add("fade-in");
+
+        // Get all buttons inside the buttons container
+        var buttons = buttonsContainer.querySelectorAll("button");
+
+        buttons.forEach(function (button) {
+          var imgInButton = button.querySelector("img");
+          var arabicText = button.querySelector(".arabic-text");
+          var englishText = button.querySelector(".english-text");
+
+          imgInButton.style.transition = "transform 0.5s ease-in-out";
+          arabicText.style.transition = "opacity 0.5s ease-in-out";
+          englishText.style.transition = "opacity 0.5s ease-in-out";
+
+          // Set the new text and transform based on the button state
+          if (isFlipped) {
+            imgInButton.style.transform = "translateX(100%)";
+            arabicText.style.opacity = 1;
+            englishText.style.opacity = 0;
+          } else {
+            imgInButton.style.transform = "translateX(0)";
+            arabicText.style.opacity = 0;
+            englishText.style.opacity = 1;
+          }
+        });
+      }
+
+      function animateNameText() {
+        var nameH1 = document.getElementById("nameH1");
+        var nameH2 = document.getElementById("nameH2");
+
+        // Check if the button has the "flipped" class
+        var isFlipped = document
+          .querySelector(".personal-container button")
+          .classList.contains("flipped");
+
+        // Add a class to trigger the CSS transition for opacity
+        nameH1.classList.add("fade");
+        nameH2.classList.add("fade");
+
+        // Set the new text based on the button state
+        nameH1.textContent = isFlipped ? arabicName : "Aamash Mukhtar";
+        nameH2.textContent = isFlipped ? arabicJobTitle : "Managing Director";
+      }
+
+      // Rest of your existing code...
+
+      function toggleLogoMirrorEffect() {
+        var logo = document.querySelector(".logo-img");
+        logo.classList.toggle("flipped");
+      }
+
+      function animatePersonalImg(rightValue) {
+        var personalImg = document.querySelector(".personal-img");
+        personalImg.style.transition = "transform 0.5s ease-in-out";
+        personalImg.style.transform =
+          rightValue === 24 ? "translateX(200%)" : "translateX(0)";
+      }
+
+      function animateButton(rightValue) {
+        var button = document.querySelector(".personal-container button");
+        button.style.transition = "transform 0.5s ease-in-out";
+        button.style.transform =
+          rightValue === 24 ? "translateX(-200%)" : "translateX(0)";
+      }
+
+      function animateDataElements(rightValue) {
+        var dataElements = document.querySelectorAll(".data-element");
+        dataElements.forEach(function (dataElement) {
+          var imgInDataElement = dataElement.querySelector("img");
+          var aInDataElement = dataElement.querySelector(".data-element a");
+
+          imgInDataElement.style.transition = "transform 0.5s ease-in-out";
+          imgInDataElement.style.transform =
+            rightValue === 24 ? "translateX(1000%)" : "translateX(0)";
+
+          aInDataElement.style.transition = "transform 0.5s ease-in-out";
+          aInDataElement.style.transform =
+            rightValue === 24 ? "translateX(150%)" : "translateX(0)";
+        });
+      }
+
+      function animateNameContainer(rightValue) {
+        var nameContainer = document.querySelector(".name-container");
+        var nameH1 = nameContainer.querySelector("h1");
+        var nameH2 = nameContainer.querySelector("h2");
+
+        // Add transition for opacity and transform
+        nameH1.style.transition =
+          "opacity 0.5s ease-in-out, transform 0.5s ease-in-out";
+        nameH2.style.transition =
+          "opacity 0.5s ease-in-out, transform 0.5s ease-in-out";
+
+        // Add a class to trigger the CSS transition for opacity
+        nameH1.classList.add("fade");
+        nameH2.classList.add("fade");
+
+        // Set the opacity and transform based on the button state
+        if (rightValue === 24) {
+          nameH1.style.transform = "translateX(50%)";
+          nameH2.style.transform = "translateX(50%)";
+        } else {
+          nameH1.style.transform = "translateX(0)";
+          nameH2.style.transform = "translateX(0)";
+        }
+      }
+
+      function closePopup() {
+        document.getElementById("overlay").style.display = "none";
+      }
+
+      //   POPUP
+
+      //   function openPopup() {
+      //     document.getElementById("overlay").style.display = "flex";
+      //   }
+
+      // Copy text
+
+      function copyText() {
+        const inputField = document.getElementById("myInput");
+        const copyMessage = document.getElementById("copyMessage");
+
+        try {
+          document.execCommand("copy");
+
+          copyMessage.textContent = "Skopiowano do schowka";
+
+          setTimeout(function () {
+            copyMessage.textContent = "";
+          }, 1500);
+        } catch (err) {
+          console.error("Błąd podczas kopiowania do schowka:", err);
+          copyMessage.textContent = "Błąd podczas kopiowania do schowka";
+        }
+      }
+
+      //CREATE CONTACT
+
+      function createContact() {
+        const contactName = "Łukasz Szymczak";
+        const phoneNumber = "+48500170839";
+        const emailAddress = "lszymczak@identitygroup.pl";
+        const homepage = "http://identitygroup.pl/";
+
+        const vCardContent =
+          "BEGIN:VCARD\n" +
+          "VERSION:3.0\n" +
+          "FN:" +
+          contactName +
+          "\n" +
+          "TEL:" +
+          phoneNumber +
+          "\n" +
+          "EMAIL:" +
+          emailAddress +
+          "\n" +
+          (homepage ? "URL:" + homepage + "\n" : "") +
+          "END:VCARD";
+
+        const blob = new Blob([vCardContent], { type: "text/vcard" });
+
+        const link = document.getElementById("downloadLink");
+        link.href = window.URL.createObjectURL(blob);
+        link.download = "contact.vcf";
+
+        link.onclick = function () {
+          document.getElementById("overlay").style.display = "none";
+        };
+      }
+    </script>
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>e business card</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      .container {
+        position: relative;
+        max-width: 360px;
+        background: linear-gradient(
+            0deg,
+            rgba(55, 60, 55, 0.05) 0%,
+            rgba(55, 60, 55, 0.05) 100%
+          ),
+          #fff;
+      }
+
+      .logo {
+        padding: 79px 0 80px 0;
+      }
+
+      .logo img {
+        padding: 0 24px;
+        transition: transform 0.5s ease-in-out;
+      }
+
+      .logo-img {
+        transform: translateX(0);
+      }
+
+      .personal-container {
+        display: flex;
+        padding: 0px 24px;
+        flex-direction: row;
+        align-items: center;
+        gap: 112px;
+        vertical-align: middle;
+      }
+
+      .personal-container button {
+        width: 160px;
+        height: 34px;
+        border-radius: 25px;
+        border: 1px solid #000;
+        line-height: 18px;
+        vertical-align: middle;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .personal-container button img {
+        position: absolute;
+        top: 0;
+        left: 10px;
+        transition: transform 0.5s ease-in-out;
+      }
+
+      .personal-container button span {
+        transition: opacity 0.5s ease-in-out;
+      }
+
+      .personal-container button .arabic-text {
+        font-size: 20px;
+        position: absolute;
+        top: 2px;
+        left: 45px;
+        opacity: 1;
+      }
+
+      .personal-container button .english-text {
+        font-size: 14px;
+        opacity: 0;
+      }
+
+      .personal-container button.flipped .arabic-text,
+      .personal-container button.flipped .english-text {
+        opacity: 0;
+      }
+
+      .personal-container button.flipped .english-text {
+        opacity: 1;
+        position: absolute;
+        top: 7px;
+        left: 10px;
+      }
+
+      .name-container {
+        margin: 34px 24px 34px 24px;
+      }
+
+      .name-container h1,
+      .name-container h2 {
+        display: block;
+        color: #373c37;
+        font-style: normal;
+        font-weight: 400;
+        font-family: "Atyp Display", sans-serif;
+      }
+
+      .name-container h1 {
+        font-size: 20px;
+        line-height: 20px;
+        padding-bottom: 12px;
+      }
+
+      .name-container h2 {
+        font-size: 16px;
+        line-height: 16px;
+      }
+
+      .data-element-container {
+        margin: 0 24px 0 24px;
+      }
+
+      .buttons-container {
+        display: flex;
+        padding: 0px 24px;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 16px;
+        align-self: stretch;
+        margin-bottom: 22px;
+      }
+
+      .buttons-container button {
+        display: flex;
+        width: 150px;
+        padding: 8px 0px;
+        gap: 8px;
+        background-color: #cdcdc8;
+        border-radius: 25px;
+        border: 0px solid;
+        height: 42px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .buttons-container button img {
+        position: absolute;
+        top: 8px;
+        left: 35px;
+        transition: transform 0.5s ease-in-out;
+      }
+
+      .buttons-container button span {
+        display: flex;
+        transition: opacity 0.5s ease-in-out;
+      }
+
+      .buttons-container button .arabic-text {
+        position: absolute;
+        left: 60px;
+        top: 7px;
+        font-size: 20px;
+        opacity: 0;
+      }
+
+      .buttons-container button .english-text {
+        position: absolute;
+        left: 70px;
+        top: 12px;
+        font-size: 14px;
+      }
+
+      .data-element-container {
+        border-bottom: 0.5px dashed #cdcdc8;
+        margin-bottom: 10px;
+      }
+
+      .data-element {
+        padding: 8px 12px;
+        position: relative;
+      }
+
+      .data-element a {
+        text-decoration: none;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 18px;
+        color: #373c37;
+        vertical-align: middle;
+      }
+
+      .data-element img {
+        vertical-align: middle;
+        margin-right: 8px;
+        width: 26px;
+        height: 26px;
+        transition: transform 0.5s ease-in-out;
+      }
+
+      .floating-buttons {
+        position: absolute;
+        right: 24px;
+        bottom: 1px;
+        transition: right 0.5s ease-in-out;
+      }
+
+      .popup-link-element {
+        font-size: 13px;
+        color: #5a5a5a;
+        font-weight: 400;
+        vertical-align: middle;
+        margin-left: 10px;
+        text-decoration: none;
+      }
+
+      #overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        align-items: center;
+        justify-content: center;
+      }
+
+      #popup {
+        width: 230px;
+        height: 230px;
+        background-color: #fff;
+        padding: 10px;
+      }
+
+      #closeButton {
+        cursor: pointer;
+      }
+
+      .logo-img.flipped {
+        transform: translateX(calc(100% - 84px));
+      }
+
+      /* Add these styles to your existing CSS code */
+      .fade,
+      .fade-in,
+      .fade-out {
+        transition: opacity 0.5s ease-in-out;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="200"
+        height="255"
+        viewBox="0 0 200 255"
+        fill="none"
+        style="position: absolute; top: 0px; left: 160px; opacity: 0.15"
+      >
+        <path
+          d="M348.69 -94L288.91 -94C287.26 -40.34 273.72 8.11001 248.23 51.3C222.82 94.46 188.45 128.77 145.28 154.2C102.12 179.66 53.7 193.25 -5.5809e-05 194.9L-6.10352e-05 254.68C63.6499 253.55 121.9 237.52 174.76 206.52C227.62 175.52 269.55 133.6 300.55 80.76C331.55 27.85 347.6 -30.37 348.69 -94Z"
+          fill="#CDCDC8"
+        />
+      </svg>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="200"
+        height="350"
+        viewBox="0 0 200 350"
+        fill="none"
+        style="position: absolute; top: 280px; left: 160px; opacity: 0.15"
+      >
+        <path
+          d="M-3.05543e-05 0.609955L-3.66503e-05 70.34C51.49 71.99 98.11 85.13 139.87 109.77C181.68 134.39 214.89 167.61 239.52 209.4C264.17 251.16 277.31 297.81 278.96 349.27L348.69 349.27C347.6 285.62 331.55 227.37 300.55 174.53C269.55 121.66 227.63 79.74 174.76 48.72C121.89 17.72 63.65 1.68995 -3.05535e-05 0.599945"
+          fill="#CDCDC8"
+        />
+      </svg>
+
+      <div class="logo">
+        <img
+          src="assets/logo.png"
+          alt=""
+          width="222px"
+          height="56px"
+          class="logo-img"
+        />
+      </div>
+      <div class="personal-container">
+        <img
+          src="assets/photo.png"
+          width="100"
+          height="100"
+          alt="Aamash Mukhtar"
+          class="personal-img"
+        />
+        <button onclick="toggleFloatingButtons()" class="animated-button">
+          <img src="assets/arrow.png" width="26" height="26" />
+          <span class="arabic-text">عربي</span>
+          <span class="english-text">English</span>
+        </button>
+      </div>
+      <div class="name-container" id="nameContainer">
+        <h1 id="nameH1">Aamash Mukhtar</h1>
+        <h2 id="nameH2">Managing Director</h2>
+      </div>
+      <div class="buttons-container">
+        <button>
+          <img src="assets/iphone.png" width="26" height="26" />
+          <span class="english-text">phone</span>
+          <span class="arabic-text">يتصل</span>
+        </button>
+        <button>
+          <img src="assets/imail.png" width="26" height="26" />
+          <span class="arabic-text">رسالة</span>
+          <span class="english-text">mail</span>
+        </button>
+      </div>
+      <div class="contact-container">
+        <div class="data-element-container reversed">
+          <div class="data-element">
+            <img src="assets/iphone.png" alt="" height="16" width="16" />
+            <a class="link-element" href="tel:+971 55 414 9343"
+              >+971 55 414 9343</a
+            >
+          </div>
+        </div>
+        <div class="data-element-container">
+          <div class="data-element">
+            <img src="assets/imail.png" alt="" height="16" width="16" />
+            <a class="link-element" href="mailto:aamash.mukhtar@skillspark.com"
+              >aamash.mukhtar@skillspark.com</a
+            >
+          </div>
+        </div>
+        <div class="data-element-container">
+          <div class="data-element">
+            <img src="assets/iwebsite.png" alt="" height="16" width="16" />
+            <a
+              class="link-element"
+              href="https://www.skillspark.com/"
+              target="_blank"
+              >www.skillspark.com</a
+            >
+          </div>
+        </div>
+        <div class="data-element-container">
+          <div class="data-element">
+            <img src="assets/linkedin.png" alt="" height="16" width="16" />
+            <a
+              class="link-element"
+              href="https://www.linkedin.com/in/aamashmukhtar"
+              target="_blank"
+              >aamashmukhtar</a
+            >
+          </div>
+        </div>
+      </div>
+
+      <!-- floating buttons -->
+      <div
+        class="floating-buttons"
+        style="right: 24px; bottom: 1px"
+        id="floatingButtons"
+      >
+        <a onclick="openPopup()">
+          <img src="assets/share.png" alt="" height="66" width="66" />
+        </a>
+        <a onclick="createContact()" style="display: block" id="downloadLink">
+          <img src="assets/addcontact.png" alt="" height="66" width="66" />
+        </a>
+      </div>
+    </div>
+    <div id="overlay">
+      <div id="popup" style="background-color: green">
+        <div style="text-align: right">
+          <img
+            src="assets/linkedin.png"
+            id="closeButton"
+            height="16"
+            width="16"
+            onclick="closePopup()"
+          />
+        </div>
+
+        <div style="vertical-align: middle; padding: 0px 8px 8px 0">
+          <img
+            src="mail.png"
+            alt=""
+            height="20"
+            width="20"
+            style="vertical-align: middle"
+          />
+          <a class="popup-link-element" href="mailto:lszymczak@identitygroup.pl"
+            >lszymczak@identitygroup.pl</a
+          >
+        </div>
+        <div style="vertical-align: middle; padding: 8px 8px 8px 0">
+          <img
+            src="sms.png"
+            alt=""
+            height="20"
+            width="20"
+            style="vertical-align: middle"
+          />
+          <a class="popup-link-element" href="sms:+48500170839">SMS</a>
+        </div>
+        <div style="vertical-align: middle; padding: 8px 8px 8px 0">
+          <img
+            src="linkedin.png"
+            alt=""
+            height="20"
+            width="20"
+            style="vertical-align: middle"
+          />
+          <a
+            class="popup-link-element"
+            href="https://pl.linkedin.com/in/lssdesigner"
+            target="_blank"
+            >lszymczak-id</a
+          >
+        </div>
+
+        <div style="vertical-align: middle; padding: 8px 8px 8px 0">
+          <img
+            src="copyi.png"
+            alt=""
+            height="20"
+            width="20"
+            style="vertical-align: middle"
+          />
+          <input
+            type="text"
+            id="myInput"
+            value="https://milosz13.github.io/business-card/"
+            style="
+              margin: 0 10px;
+              width: 100px;
+              height: 20px;
+              border: 1px solid #5a5a5a;
+              font-family: Khand;
+              vertical-align: middle;
+            "
+          />
+          <button
+            onclick="copyText()"
+            style="
+              color: #5a5a5a;
+              font-family: Khand;
+              height: 20px;
+              vertical-align: middle;
+            "
+          >
+            Kopiuj
+          </button>
+          <span
+            style="color: #d21e1e; font-family: Khand; font-size: 10px"
+            id="copyMessage"
+          ></span>
+        </div>
+      </div>
+    </div>
+    <script>
+      function toggleFloatingButtonPosition() {
+        var floatingButtons = document.getElementById("floatingButtons");
+        var rightValue = parseFloat(
+          getComputedStyle(floatingButtons).right.replace("px", "")
+        );
+        floatingButtons.style.right = rightValue === 24 ? "246px" : "24px";
+        return rightValue;
+      }
+
+      function toggleFloatingButtons() {
+        var rightValue = toggleFloatingButtonPosition();
+        toggleLogoMirrorEffect();
+        toggleButtonText();
+        animatePersonalImg(rightValue);
+        animateButton(rightValue);
+        animateDataElements(rightValue);
+        rotateArrow(rightValue === 24);
+        animateNameElements(rightValue);
+      }
+
+      function rotateArrow(isRight) {
+        var arrow = document.querySelector(".personal-container button img");
+        arrow.style.transition = "transform 0.5s ease-in-out";
+        arrow.style.transform = isRight
+          ? "translateX(50px) translateY(2px) rotate(180deg)"
+          : "rotate(0deg)";
+      }
+
+      // Define Arabic and English versions of name and job title
+      const arabicName = "عمش مختار";
+      const arabicJobTitle = "المدير التنفيذي";
+      function toggleButtonText() {
+        let button = document.querySelector(".personal-container button");
+        button.classList.toggle("flipped");
+
+        animateButtonContainer();
+      }
+
+      function animateButtonContainer() {
+        let buttonsContainer = document.querySelector(".buttons-container");
+
+        // Check if the button has the "flipped" class
+        let isFlipped = document
+          .querySelector(".personal-container button")
+          .classList.contains("flipped");
+
+        // Add a class to trigger the CSS transition for opacity
+        buttonsContainer.classList.add("fade-in");
+
+        // Get all buttons inside the buttons container
+        let buttons = buttonsContainer.querySelectorAll("button");
+
+        buttons.forEach(function (button) {
+          let imgInButton = button.querySelector("img");
+          let arabicText = button.querySelector(".arabic-text");
+          let englishText = button.querySelector(".english-text");
+
+          imgInButton.style.transition = "transform 0.5s ease-in-out";
+          arabicText.style.transition = "opacity 0.5s ease-in-out";
+          englishText.style.transition = "opacity 0.5s ease-in-out";
+
+          // Set the new text and transform based on the button state
+          if (isFlipped) {
+            imgInButton.style.transform = "translateX(50px)";
+            arabicText.style.opacity = 1;
+            arabicText.style.transform = "translateX(-20px)";
+            englishText.style.opacity = 0;
+          } else {
+            imgInButton.style.transform = "translateX(0)";
+            arabicText.style.opacity = 0;
+            englishText.style.opacity = 1;
+          }
+        });
+      }
+
+      function toggleLogoMirrorEffect() {
+        let logo = document.querySelector(".logo-img");
+        logo.classList.toggle("flipped");
+      }
+
+      function animatePersonalImg(rightValue) {
+        let personalImg = document.querySelector(".personal-img");
+        personalImg.style.transition = "transform 0.5s ease-in-out";
+        personalImg.style.transform =
+          rightValue === 24 ? "translateX(200%)" : "translateX(0)";
+      }
+
+      function animateButton(rightValue) {
+        let button = document.querySelector(".personal-container button");
+        button.style.transition = "transform 0.5s ease-in-out";
+        button.style.transform =
+          rightValue === 24 ? "translateX(-200%)" : "translateX(0)";
+      }
+
+      function animateDataElements(rightValue) {
+        let dataElements = document.querySelectorAll(".data-element");
+        dataElements.forEach(function (dataElement) {
+          let imgInDataElement = dataElement.querySelector("img");
+          let aInDataElement = dataElement.querySelector(".data-element a");
+
+          imgInDataElement.style.transition = "transform 0.5s ease-in-out";
+          imgInDataElement.style.transform =
+            rightValue === 24 ? "translateX(1000%)" : "translateX(0)";
+
+          aInDataElement.style.transition = "transform 0.5s ease-in-out";
+          aInDataElement.style.transform =
+            rightValue === 24 ? "translateX(150%)" : "translateX(0)";
+
+          // Dodane, aby uwzględnić różne długości linków
+          aInDataElement.style.width = rightValue === 24 ? "10%" : "auto";
+        });
+      }
+
+      function animateNameElements(rightValue) {
+        let nameContainer = document.querySelector(".name-container");
+        let nameH1 = nameContainer.querySelector("h1");
+        let nameH2 = nameContainer.querySelector("h2");
+
+        // Add transition for opacity and transform
+        nameH1.style.transition =
+          "opacity 0.5s ease-in-out, transform 0.5s ease-in-out";
+        nameH2.style.transition =
+          "opacity 0.5s ease-in-out, transform 0.5s ease-in-out";
+
+        // Add a class to trigger the CSS transition for opacity
+        nameH1.classList.add("fade");
+        nameH2.classList.add("fade");
+
+        // Check if the button has the "flipped" class
+        let isFlipped = document
+          .querySelector(".personal-container button")
+          .classList.contains("flipped");
+
+        // Set the opacity and transform based on the button state
+        if (rightValue === 24) {
+          nameH1.style.transform = "translateX(50%)";
+          nameH2.style.transform = "translateX(50%)";
+        } else {
+          nameH1.style.transform = "translateX(0)";
+          nameH2.style.transform = "translateX(0)";
+        }
+
+        // Set the new text based on the button state
+        nameH1.textContent = isFlipped ? arabicName : "Aamash Mukhtar";
+        nameH2.textContent = isFlipped ? arabicJobTitle : "Managing Director";
+      }
+
+      function closePopup() {
+        document.getElementById("overlay").style.display = "none";
+      }
+
+      //   POPUP
+
+      //   function openPopup() {
+      //     document.getElementById("overlay").style.display = "flex";
+      //   }
+
+      // Copy text
+
+      function copyText() {
+        const inputField = document.getElementById("myInput");
+        const copyMessage = document.getElementById("copyMessage");
+
+        try {
+          document.execCommand("copy");
+
+          copyMessage.textContent = "Skopiowano do schowka";
+
+          setTimeout(function () {
+            copyMessage.textContent = "";
+          }, 1500);
+        } catch (err) {
+          console.error("Błąd podczas kopiowania do schowka:", err);
+          copyMessage.textContent = "Błąd podczas kopiowania do schowka";
+        }
+      }
+
+      //CREATE CONTACT
+
+      function createContact() {
+        const contactName = "Łukasz Szymczak";
+        const phoneNumber = "+48500170839";
+        const emailAddress = "lszymczak@identitygroup.pl";
+        const homepage = "http://identitygroup.pl/";
+
+        const vCardContent =
+          "BEGIN:VCARD\n" +
+          "VERSION:3.0\n" +
+          "FN:" +
+          contactName +
+          "\n" +
+          "TEL:" +
+          phoneNumber +
+          "\n" +
+          "EMAIL:" +
+          emailAddress +
+          "\n" +
+          (homepage ? "URL:" + homepage + "\n" : "") +
+          "END:VCARD";
+
+        const blob = new Blob([vCardContent], { type: "text/vcard" });
+
+        const link = document.getElementById("downloadLink");
+        link.href = window.URL.createObjectURL(blob);
+        link.download = "contact.vcf";
+
+        link.onclick = function () {
+          document.getElementById("overlay").style.display = "none";
+        };
+      }
+    </script>
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>e business card</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      .container {
+        position: relative;
+        max-width: 360px;
+        background: linear-gradient(
+            0deg,
+            rgba(55, 60, 55, 0.05) 0%,
+            rgba(55, 60, 55, 0.05) 100%
+          ),
+          #fff;
+      }
+
+      .logo {
+        padding: 79px 0 80px 0;
+      }
+
+      .logo img {
+        padding: 0 24px;
+        transition: transform 0.5s ease-in-out;
+      }
+
+      .logo-img {
+        transform: translateX(0);
+      }
+
+      .personal-container {
+        display: flex;
+        padding: 0px 24px;
+        flex-direction: row;
+        align-items: center;
+        gap: 112px;
+        vertical-align: middle;
+      }
+
+      .personal-container button {
+        width: 160px;
+        height: 34px;
+        border-radius: 25px;
+        border: 1px solid #000;
+        line-height: 18px;
+        vertical-align: middle;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .personal-container button img {
+        position: absolute;
+        top: 0;
+        left: 10px;
+        transition: transform 0.5s ease-in-out;
+      }
+
+      .personal-container button span {
+        transition: opacity 0.5s ease-in-out;
+      }
+
+      .personal-container button .arabic-text {
+        font-size: 20px;
+        position: absolute;
+        top: 2px;
+        left: 45px;
+        opacity: 1;
+      }
+
+      .personal-container button .english-text {
+        font-size: 14px;
+        opacity: 0;
+      }
+
+      .personal-container button.flipped .arabic-text,
+      .personal-container button.flipped .english-text {
+        opacity: 0;
+      }
+
+      .personal-container button.flipped .english-text {
+        opacity: 1;
+        position: absolute;
+        top: 7px;
+        left: 10px;
+      }
+
+      .name-container {
+        margin: 34px 24px 34px 24px;
+      }
+
+      .name-container h1,
+      .name-container h2 {
+        display: block;
+        color: #373c37;
+        font-style: normal;
+        font-weight: 400;
+        font-family: "Atyp Display", sans-serif;
+      }
+
+      .name-container h1 {
+        font-size: 20px;
+        line-height: 20px;
+        padding-bottom: 12px;
+      }
+
+      .name-container h2 {
+        font-size: 16px;
+        line-height: 16px;
+      }
+
+      .data-element-container {
+        margin: 0 24px 0 24px;
+      }
+
+      .buttons-container {
+        display: flex;
+        padding: 0px 24px;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 16px;
+        align-self: stretch;
+        margin-bottom: 22px;
+      }
+
+      .buttons-container button {
+        display: flex;
+        width: 150px;
+        padding: 8px 0px;
+        gap: 8px;
+        background-color: #cdcdc8;
+        border-radius: 25px;
+        border: 0px solid;
+        height: 42px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .buttons-container button img {
+        position: absolute;
+        top: 8px;
+        left: 35px;
+        transition: transform 0.5s ease-in-out;
+      }
+
+      .buttons-container button span {
+        display: flex;
+        transition: opacity 0.5s ease-in-out;
+      }
+
+      .buttons-container button .arabic-text {
+        position: absolute;
+        left: 60px;
+        top: 7px;
+        font-size: 20px;
+        opacity: 0;
+      }
+
+      .buttons-container button .english-text {
+        position: absolute;
+        left: 70px;
+        top: 12px;
+        font-size: 14px;
+      }
+
+      .data-element-container {
+        border-bottom: 0.5px dashed #cdcdc8;
+        margin-bottom: 10px;
+      }
+
+      .data-element {
+        padding: 8px 12px;
+        position: relative;
+      }
+
+      .data-element a {
+        text-decoration: none;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 18px;
+        color: #373c37;
+        vertical-align: middle;
+      }
+
+      .data-element img {
+        vertical-align: middle;
+        margin-right: 8px;
+        width: 26px;
+        height: 26px;
+        transition: transform 0.5s ease-in-out;
+      }
+
+      .floating-buttons {
+        position: absolute;
+        right: 24px;
+        bottom: 1px;
+        transition: right 0.5s ease-in-out;
+      }
+
+      .popup-link-element {
+        font-size: 13px;
+        color: #5a5a5a;
+        font-weight: 400;
+        vertical-align: middle;
+        margin-left: 10px;
+        text-decoration: none;
+      }
+
+      #overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        align-items: center;
+        justify-content: center;
+      }
+
+      #popup {
+        width: 230px;
+        height: 230px;
+        background-color: #fff;
+        padding: 10px;
+      }
+
+      #closeButton {
+        cursor: pointer;
+      }
+
+      .logo-img.flipped {
+        transform: translateX(calc(100% - 84px));
+      }
+
+      /* Add these styles to your existing CSS code */
+      .fade,
+      .fade-in,
+      .fade-out {
+        transition: opacity 0.5s ease-in-out;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="200"
+        height="255"
+        viewBox="0 0 200 255"
+        fill="none"
+        style="position: absolute; top: 0px; left: 160px; opacity: 0.15"
+      >
+        <path
+          d="M348.69 -94L288.91 -94C287.26 -40.34 273.72 8.11001 248.23 51.3C222.82 94.46 188.45 128.77 145.28 154.2C102.12 179.66 53.7 193.25 -5.5809e-05 194.9L-6.10352e-05 254.68C63.6499 253.55 121.9 237.52 174.76 206.52C227.62 175.52 269.55 133.6 300.55 80.76C331.55 27.85 347.6 -30.37 348.69 -94Z"
+          fill="#CDCDC8"
+        />
+      </svg>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="200"
+        height="350"
+        viewBox="0 0 200 350"
+        fill="none"
+        style="position: absolute; top: 280px; left: 160px; opacity: 0.15"
+      >
+        <path
+          d="M-3.05543e-05 0.609955L-3.66503e-05 70.34C51.49 71.99 98.11 85.13 139.87 109.77C181.68 134.39 214.89 167.61 239.52 209.4C264.17 251.16 277.31 297.81 278.96 349.27L348.69 349.27C347.6 285.62 331.55 227.37 300.55 174.53C269.55 121.66 227.63 79.74 174.76 48.72C121.89 17.72 63.65 1.68995 -3.05535e-05 0.599945"
+          fill="#CDCDC8"
+        />
+      </svg>
+
+      <div class="logo">
+        <img
+          src="assets/logo.png"
+          alt=""
+          width="222px"
+          height="56px"
+          class="logo-img"
+        />
+      </div>
+      <div class="personal-container">
+        <img
+          src="assets/photo.png"
+          width="100"
+          height="100"
+          alt="Aamash Mukhtar"
+          class="personal-img"
+        />
+        <button onclick="toggleFloatingButtons()" class="animated-button">
+          <img src="assets/arrow.png" width="26" height="26" />
+          <span class="arabic-text">عربي</span>
+          <span class="english-text">English</span>
+        </button>
+      </div>
+      <div class="name-container" id="nameContainer">
+        <h1 id="nameH1">Aamash Mukhtar</h1>
+        <h2 id="nameH2">Managing Director</h2>
+      </div>
+      <div class="buttons-container">
+        <button>
+          <img src="assets/iphone.png" width="26" height="26" />
+          <span class="english-text">phone</span>
+          <span class="arabic-text">يتصل</span>
+        </button>
+        <button>
+          <img src="assets/imail.png" width="26" height="26" />
+          <span class="arabic-text">رسالة</span>
+          <span class="english-text">mail</span>
+        </button>
+      </div>
+      <div class="contact-container">
+        <div class="data-element-container reversed">
+          <div class="data-element">
+            <img src="assets/iphone.png" alt="" height="16" width="16" />
+            <a class="link-element" href="tel:+971 55 414 9343"
+              >+971 55 414 9343</a
+            >
+          </div>
+        </div>
+        <div class="data-element-container">
+          <div class="data-element">
+            <img src="assets/imail.png" alt="" height="16" width="16" />
+            <a class="link-element" href="mailto:aamash.mukhtar@skillspark.com"
+              >aamash.mukhtar@skillspark.com</a
+            >
+          </div>
+        </div>
+        <div class="data-element-container">
+          <div class="data-element">
+            <img src="assets/iwebsite.png" alt="" height="16" width="16" />
+            <a
+              class="link-element"
+              href="https://www.skillspark.com/"
+              target="_blank"
+              >www.skillspark.com</a
+            >
+          </div>
+        </div>
+        <div class="data-element-container">
+          <div class="data-element">
+            <img src="assets/linkedin.png" alt="" height="16" width="16" />
+            <a
+              class="link-element"
+              href="https://www.linkedin.com/in/aamashmukhtar"
+              target="_blank"
+              >aamashmukhtar</a
+            >
+          </div>
+        </div>
+      </div>
+
+      <!-- floating buttons -->
+      <div
+        class="floating-buttons"
+        style="right: 24px; bottom: 1px"
+        id="floatingButtons"
+      >
+        <a onclick="openPopup()">
+          <img src="assets/share.png" alt="" height="66" width="66" />
+        </a>
+        <a onclick="createContact()" style="display: block" id="downloadLink">
+          <img src="assets/addcontact.png" alt="" height="66" width="66" />
+        </a>
+      </div>
+    </div>
+    <div id="overlay">
+      <div id="popup" style="background-color: green">
+        <div style="text-align: right">
+          <img
+            src="assets/linkedin.png"
+            id="closeButton"
+            height="16"
+            width="16"
+            onclick="closePopup()"
+          />
+        </div>
+
+        <div style="vertical-align: middle; padding: 0px 8px 8px 0">
+          <img
+            src="mail.png"
+            alt=""
+            height="20"
+            width="20"
+            style="vertical-align: middle"
+          />
+          <a class="popup-link-element" href="mailto:lszymczak@identitygroup.pl"
+            >lszymczak@identitygroup.pl</a
+          >
+        </div>
+        <div style="vertical-align: middle; padding: 8px 8px 8px 0">
+          <img
+            src="sms.png"
+            alt=""
+            height="20"
+            width="20"
+            style="vertical-align: middle"
+          />
+          <a class="popup-link-element" href="sms:+48500170839">SMS</a>
+        </div>
+        <div style="vertical-align: middle; padding: 8px 8px 8px 0">
+          <img
+            src="linkedin.png"
+            alt=""
+            height="20"
+            width="20"
+            style="vertical-align: middle"
+          />
+          <a
+            class="popup-link-element"
+            href="https://pl.linkedin.com/in/lssdesigner"
+            target="_blank"
+            >lszymczak-id</a
+          >
+        </div>
+
+        <div style="vertical-align: middle; padding: 8px 8px 8px 0">
+          <img
+            src="copyi.png"
+            alt=""
+            height="20"
+            width="20"
+            style="vertical-align: middle"
+          />
+          <input
+            type="text"
+            id="myInput"
+            value="https://milosz13.github.io/business-card/"
+            style="
+              margin: 0 10px;
+              width: 100px;
+              height: 20px;
+              border: 1px solid #5a5a5a;
+              font-family: Khand;
+              vertical-align: middle;
+            "
+          />
+          <button
+            onclick="copyText()"
+            style="
+              color: #5a5a5a;
+              font-family: Khand;
+              height: 20px;
+              vertical-align: middle;
+            "
+          >
+            Kopiuj
+          </button>
+          <span
+            style="color: #d21e1e; font-family: Khand; font-size: 10px"
+            id="copyMessage"
+          ></span>
+        </div>
+      </div>
+    </div>
+    <script>
+      function toggleFloatingButtonPosition() {
+        var floatingButtons = document.getElementById("floatingButtons");
+        var rightValue = parseFloat(
+          getComputedStyle(floatingButtons).right.replace("px", "")
+        );
+        floatingButtons.style.right = rightValue === 24 ? "246px" : "24px";
+        return rightValue;
+      }
+
+      function toggleFloatingButtons() {
+        var rightValue = toggleFloatingButtonPosition();
+        toggleLogoMirrorEffect();
+        rotateArrow(rightValue === 24);
+        toggleButtonText();
+        animatePersonalImg(rightValue);
+        animateButton(rightValue);
+        animateDataElements(rightValue);
+        animateNameElements(rightValue);
+      }
+
+      //logo animation
+      function toggleLogoMirrorEffect() {
+        let logo = document.querySelector(".logo-img");
+        logo.classList.toggle("flipped");
+      }
+
+      //arrow img animation
+      function rotateArrow(isRight) {
+        var arrow = document.querySelector(".personal-container button img");
+        arrow.style.transition = "transform 0.5s ease-in-out";
+        arrow.style.transform = isRight
+          ? "translateX(50px) translateY(2px) rotate(-180deg)"
+          : "rotate(0deg)";
+      }
+
+      function animateButtonContainer() {
+        let buttonsContainer = document.querySelector(".buttons-container");
+
+        let isFlipped = document
+          .querySelector(".personal-container button")
+          .classList.contains("flipped");
+
+        buttonsContainer.classList.add("fade-in");
+
+        let buttons = buttonsContainer.querySelectorAll("button");
+
+        buttons.forEach(function (button) {
+          let imgInButton = button.querySelector("img");
+          let arabicText = button.querySelector(".arabic-text");
+          let englishText = button.querySelector(".english-text");
+
+          imgInButton.style.transition = "transform 0.5s ease-in-out";
+          arabicText.style.transition = "opacity 0.5s ease-in-out";
+          englishText.style.transition = "opacity 0.5s ease-in-out";
+
+          // Set the new text and transform based on the button state
+          if (isFlipped) {
+            imgInButton.style.transform = "translateX(50px)";
+            arabicText.style.opacity = 1;
+            arabicText.style.transform = "translateX(-20px)";
+            englishText.style.opacity = 0;
+          } else {
+            imgInButton.style.transform = "translateX(0)";
+            arabicText.style.opacity = 0;
+            englishText.style.opacity = 1;
+          }
+        });
+      }
+
+      // language change button animation
+      function toggleButtonText() {
+        let button = document.querySelector(".personal-container button");
+        button.classList.toggle("flipped");
+
+        animateButtonContainer();
+      }
+
+      //personal img animation
+      function animatePersonalImg(rightValue) {
+        let personalImg = document.querySelector(".personal-img");
+        personalImg.style.transition = "transform 0.5s ease-in-out";
+        personalImg.style.transform =
+          rightValue === 24 ? "translateX(200%)" : "translateX(0)";
+      }
+
+      //
+      function animateButton(rightValue) {
+        let button = document.querySelector(".personal-container button");
+        button.style.transition = "transform 0.5s ease-in-out";
+        button.style.transform =
+          rightValue === 24 ? "translateX(-200%)" : "translateX(0)";
+      }
+
+      function animateDataElements(rightValue) {
+        let dataElements = document.querySelectorAll(".data-element");
+        dataElements.forEach(function (dataElement) {
+          let imgInDataElement = dataElement.querySelector("img");
+
+          imgInDataElement.style.transition = "transform 0.5s ease-in-out";
+          imgInDataElement.style.transform =
+            rightValue === 24 ? "translateX(1000%)" : "translateX(0)";
+        });
+      }
+
+      // Define Arabic and English versions of name and job title
+      const arabicName = "عمش مختار";
+      const arabicJobTitle = "المدير التنفيذي";
+
+      function animateNameElements(rightValue) {
+        let nameContainer = document.querySelector(".name-container");
+        let nameH1 = nameContainer.querySelector("h1");
+        let nameH2 = nameContainer.querySelector("h2");
+
+        // Add transition for opacity and transform
+        nameH1.style.transition =
+          "opacity 1s ease-in-out, transform 0.5s ease-in-out";
+        nameH2.style.transition =
+          "opacity 1s ease-in-out, transform 0.5s ease-in-out";
+
+        // Add a class to trigger the CSS transition for opacity
+
+        // Check if the button has the "flipped" class
+        let isFlipped = document
+          .querySelector(".personal-container button")
+          .classList.contains("flipped");
+
+        // Set the opacity and transform based on the button state
+        if (rightValue === 24) {
+          nameH1.style.transform = "translateX(50%)";
+          nameH2.style.transform = "translateX(50%)";
+        } else {
+          nameH1.style.transform = "translateX(0)";
+          nameH2.style.transform = "translateX(0)";
+        }
+
+        // Set the new text based on the button state
+        nameH1.textContent = isFlipped ? arabicName : "Aamash Mukhtar";
+        nameH2.textContent = isFlipped ? arabicJobTitle : "Managing Director";
+      }
+
+      function closePopup() {
+        document.getElementById("overlay").style.display = "none";
+      }
+
+      //   POPUP
+
+      //   function openPopup() {
+      //     document.getElementById("overlay").style.display = "flex";
+      //   }
+
+      // Copy text
+
+      function copyText() {
+        const inputField = document.getElementById("myInput");
+        const copyMessage = document.getElementById("copyMessage");
+
+        try {
+          document.execCommand("copy");
+
+          copyMessage.textContent = "Skopiowano do schowka";
+
+          setTimeout(function () {
+            copyMessage.textContent = "";
+          }, 1500);
+        } catch (err) {
+          console.error("Błąd podczas kopiowania do schowka:", err);
+          copyMessage.textContent = "Błąd podczas kopiowania do schowka";
+        }
+      }
+
+      //CREATE CONTACT
+
+      function createContact() {
+        const contactName = "Łukasz Szymczak";
+        const phoneNumber = "+48500170839";
+        const emailAddress = "lszymczak@identitygroup.pl";
+        const homepage = "http://identitygroup.pl/";
+
+        const vCardContent =
+          "BEGIN:VCARD\n" +
+          "VERSION:3.0\n" +
+          "FN:" +
+          contactName +
+          "\n" +
+          "TEL:" +
+          phoneNumber +
+          "\n" +
+          "EMAIL:" +
+          emailAddress +
+          "\n" +
+          (homepage ? "URL:" + homepage + "\n" : "") +
+          "END:VCARD";
+
+        const blob = new Blob([vCardContent], { type: "text/vcard" });
+
+        const link = document.getElementById("downloadLink");
+        link.href = window.URL.createObjectURL(blob);
+        link.download = "contact.vcf";
+
+        link.onclick = function () {
+          document.getElementById("overlay").style.display = "none";
+        };
+      }
+    </script>
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>e business card</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      @font-face {
+        font-family: "AtypDisplay";
+        src: url("fonts/AtypDisplay-Regular.woff2") format("woff2"),
+          url("fonts/AtypDispla-Regular.woff") format("woff");
+
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: "AtypText";
+        src: url("fonts/AtypText-Regular.woff2") format("woff2"),
+          url("fonts/AtypText-Regular.woff") format("woff");
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      .container {
+        position: relative;
+        max-width: 360px;
+        background: linear-gradient(
+            0deg,
+            rgba(55, 60, 55, 0.05) 0%,
+            rgba(55, 60, 55, 0.05) 100%
+          ),
+          #fff;
+      }
+
+      .logo {
+        padding: 79px 0 80px 0;
+      }
+
+      .logo img {
+        padding: 0 24px;
+        transition: transform 0.5s ease-in-out;
+        width: 222px;
+        height: 56px;
+      }
+
+      .logo-img {
+        transform: translateX(0);
+      }
+
+      .personal-container {
+        display: flex;
+        padding: 0px 24px;
+        flex-direction: row;
+        align-items: center;
+        gap: 112px;
+        vertical-align: middle;
+      }
+
+      .personal-container button {
+        width: 160px;
+        height: 34px;
+        border-radius: 25px;
+        border: 1px solid #000;
+        line-height: 18px;
+        vertical-align: middle;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .personal-container button img {
+        position: absolute;
+        top: 2px;
+        left: 10px;
+        transition: transform 0.5s ease-in-out;
+      }
+
+      .personal-container button span {
+        transition: opacity 0.5s ease-in-out;
+      }
+
+      .personal-container button .arabic-text {
+        font-family: "Tajawal", sans-serif;
+        font-size: 20px;
+        position: absolute;
+        top: 6px;
+        left: 45px;
+        opacity: 1;
+      }
+
+      .personal-container button .english-text {
+        font-family: "AtypDisplay", sans-serif;
+        font-size: 14px;
+        opacity: 0;
+      }
+
+      .personal-container button.flipped .arabic-text,
+      .personal-container button.flipped .english-text {
+        opacity: 0;
+      }
+
+      .personal-container button.flipped .english-text {
+        opacity: 1;
+        position: absolute;
+        top: 8px;
+        left: 10px;
+      }
+
+      .name-container {
+        margin: 34px 24px 34px 24px;
+        position: relative;
+      }
+
+      .name-container h1,
+      .name-container h2 {
+        display: block;
+        color: #373c37;
+        font-weight: 400;
+      }
+
+      .name-container h1 {
+        font-size: 20px;
+        line-height: 20px;
+        padding-bottom: 12px;
+        font-family: "AtypDisplay", sans-serif;
+        letter-spacing: 0.8px;
+      }
+
+      .name-container h2 {
+        font-size: 16px;
+        line-height: 16px;
+        font-family: "AtypText", sans-serif;
+      }
+
+      .data-element-container {
+        margin: 0 24px 0 24px;
+      }
+
+      .buttons-container {
+        display: flex;
+        padding: 0px 24px;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 16px;
+        align-self: stretch;
+      }
+
+      .buttons-container button {
+        display: flex;
+        width: 150px;
+        padding: 8px 0px;
+        gap: 8px;
+        background-color: #cdcdc8;
+        border-radius: 25px;
+        border: 0px solid;
+        height: 42px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .buttons-container button img {
+        position: absolute;
+        top: 8px;
+        left: 35px;
+        transition: transform 0.5s ease-in-out;
+      }
+
+      .buttons-container button span {
+        display: flex;
+        transition: opacity 0.5s ease-in-out;
+      }
+
+      .buttons-container button .arabic-text {
+        font-family: "Tajawal", sans-serif;
+        position: absolute;
+        left: 48px;
+        top: 10px;
+        font-size: 20px;
+        opacity: 0;
+      }
+
+      .buttons-container button .english-text {
+        position: absolute;
+        left: 70px;
+        top: 10px;
+        font-size: 18px;
+        font-family: "AtypDisplay", sans-serif;
+        vertical-align: middle;
+      }
+      .contact-container {
+        margin-top: 34px;
+        padding-bottom: 89px;
+      }
+      .data-element-container {
+        border-bottom: 0.5px dashed #cdcdc8;
+        margin-bottom: 10px;
+      }
+
+      .data-element {
+        padding: 8px 12px;
+        position: relative;
+      }
+
+      .data-element a {
+        text-decoration: none;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 18px;
+        color: #373c37;
+        vertical-align: middle;
+        font-family: "AtypDisplay", sans-serif;
+      }
+
+      .data-element img {
+        vertical-align: middle;
+        margin-right: 8px;
+        width: 26px;
+        height: 26px;
+      }
+
+      .floating-buttons {
+        position: absolute;
+        bottom: 75px;
+        right: 15px;
+        transition: right 0.5s ease-in-out;
+      }
+
+      .popup-link-element {
+        font-size: 13px;
+        color: #5a5a5a;
+        font-weight: 400;
+        vertical-align: middle;
+        margin-left: 10px;
+        text-decoration: none;
+      }
+
+      #overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        align-items: center;
+        justify-content: center;
+      }
+
+      #popup {
+        width: 230px;
+        height: 230px;
+        background-color: #fff;
+        padding: 10px;
+      }
+
+      #closeButton {
+        cursor: pointer;
+      }
+
+      .logo-img.flipped {
+        transform: translateX(calc(100% - 84px));
+      }
+
+      /* Add these styles to your existing CSS code */
+      .fade,
+      .fade-in,
+      .fade-out {
+        transition: opacity 0.5s ease-in-out;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="200"
+        height="255"
+        viewBox="0 0 200 255"
+        fill="none"
+        style="position: absolute; top: 0px; left: 160px; opacity: 0.15"
+      >
+        <path
+          d="M348.69 -94L288.91 -94C287.26 -40.34 273.72 8.11001 248.23 51.3C222.82 94.46 188.45 128.77 145.28 154.2C102.12 179.66 53.7 193.25 -5.5809e-05 194.9L-6.10352e-05 254.68C63.6499 253.55 121.9 237.52 174.76 206.52C227.62 175.52 269.55 133.6 300.55 80.76C331.55 27.85 347.6 -30.37 348.69 -94Z"
+          fill="#CDCDC8"
+        />
+      </svg>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="200"
+        height="350"
+        viewBox="0 0 200 350"
+        fill="none"
+        style="position: absolute; top: 280px; left: 160px; opacity: 0.15"
+      >
+        <path
+          d="M-3.05543e-05 0.609955L-3.66503e-05 70.34C51.49 71.99 98.11 85.13 139.87 109.77C181.68 134.39 214.89 167.61 239.52 209.4C264.17 251.16 277.31 297.81 278.96 349.27L348.69 349.27C347.6 285.62 331.55 227.37 300.55 174.53C269.55 121.66 227.63 79.74 174.76 48.72C121.89 17.72 63.65 1.68995 -3.05535e-05 0.599945"
+          fill="#CDCDC8"
+        />
+      </svg>
+
+      <div class="logo">
+        <img
+          src="assets/logo.png"
+          alt=""
+          width="222px"
+          height="56px"
+          class="logo-img"
+        />
+      </div>
+      <div class="personal-container">
+        <img
+          src="assets/photo.png"
+          width="100"
+          height="100"
+          alt="Aamash Mukhtar"
+          class="personal-img"
+        />
+        <button onclick="toggleFloatingButtons()" class="animated-button">
+          <img src="assets/arrow.png" width="26" height="26" />
+          <span class="arabic-text">عربي</span>
+          <span class="english-text">English</span>
+        </button>
+      </div>
+      <div class="name-container" id="nameContainer">
+        <h1 id="name-ang">Aamash Mukhtar</h1>
+        <h2 id="position-ang">Managing Director</h2>
+      </div>
+      <div class="buttons-container">
+        <button>
+          <img src="assets/iphone.png" width="26" height="26" />
+          <spaan class="english-text">Call</spaan>
+          <span class="arabic-text">يتصل</span>
+        </button>
+        <button>
+          <img src="assets/imail.png" width="26" height="26" />
+          <span class="arabic-text">رسالة</span>
+          <span class="english-text">E-mail</span>
+        </button>
+      </div>
+      <div class="contact-container">
+        <div class="data-element-container reversed">
+          <div class="data-element">
+            <img src="assets/iphone.png" alt="" height="16" width="16" />
+            <a class="link-element" href="tel:+971 55 414 9343"
+              >+971 55 414 9343</a
+            >
+          </div>
+        </div>
+        <div class="data-element-container">
+          <div class="data-element">
+            <img src="assets/imail.png" alt="" height="16" width="16" />
+            <a class="link-element" href="mailto:aamash.mukhtar@skillspark.com"
+              >aamash.mukhtar@skillspark.com</a
+            >
+          </div>
+        </div>
+        <div class="data-element-container">
+          <div class="data-element">
+            <img src="assets/iwebsite.png" alt="" height="16" width="16" />
+            <a
+              class="link-element"
+              href="https://www.skillspark.com/"
+              target="_blank"
+              >www.skillspark.com</a
+            >
+          </div>
+        </div>
+        <div class="data-element-container">
+          <div class="data-element">
+            <img src="assets/linkedin.png" alt="" height="16" width="16" />
+            <a
+              class="link-element"
+              href="https://www.linkedin.com/in/aamashmukhtar"
+              target="_blank"
+              >aamashmukhtar</a
+            >
+          </div>
+        </div>
+      </div>
+
+      <!-- floating buttons -->
+      <div class="floating-buttons" id="floatingButtons">
+        <a onclick="openPopup()">
+          <img src="assets/share.png" alt="" height="66" width="66" />
+        </a>
+        <a onclick="createContact()" style="display: block" id="downloadLink">
+          <img src="assets/addcontact.png" alt="" height="66" width="66" />
+        </a>
+      </div>
+    </div>
+
+
+    <!--POP UP ELEMENT-->
+    <!-- <div id="overlay">
+      <div id="popup" style="background-color: green">
+        <div style="text-align: right">
+          <img
+            src="assets/linkedin.png"
+            id="closeButton"
+            height="16"
+            width="16"
+            onclick="closePopup()"
+          />
+        </div>
+
+        <div style="vertical-align: middle; padding: 0px 8px 8px 0">
+          <img
+            src="mail.png"
+            alt=""
+            height="20"
+            width="20"
+            style="vertical-align: middle"
+          />
+          <a class="popup-link-element" href="mailto:"
+            ></a
+          >
+        </div>
+        <div style="vertical-align: middle; padding: 8px 8px 8px 0">
+          <img
+            src="sms.png"
+            alt=""
+            height="20"
+            width="20"
+            style="vertical-align: middle"
+          />
+          <a class="popup-link-element" href="sms:+">SMS</a>
+        </div>
+        <div style="vertical-align: middle; padding: 8px 8px 8px 0">
+          <img
+            src="linkedin.png"
+            alt=""
+            height="20"
+            width="20"
+            style="vertical-align: middle"
+          />
+          <a
+            class="popup-link-element"
+            href=""
+            target="_blank"
+            ></a
+          >
+        </div>
+
+        <div style="vertical-align: middle; padding: 8px 8px 8px 0">
+          <img
+            src="copyi.png"
+            alt=""
+            height="20"
+            width="20"
+            style="vertical-align: middle"
+          />
+          <input
+            type="text"
+            id="myInput"
+            value=""
+            style="
+              margin: 0 10px;
+              width: 100px;
+              height: 20px;
+              border: 1px solid #5a5a5a;
+              font-family: Khand;
+              vertical-align: middle;
+            "
+          />
+          <button
+            onclick="copyText()"
+            style="
+              color: #5a5a5a;
+              font-family: Khand;
+              height: 20px;
+              vertical-align: middle;
+            "
+          >
+            Kopiuj
+          </button>
+          <span
+            style="color: #d21e1e; font-family: Khand; font-size: 10px"
+            id="copyMessage"
+          ></span>
+        </div>
+      </div> -->
+    </div>
+    <script>
+      function toggleFloatingButtonPosition() {
+        let floatingButtons = document.getElementById("floatingButtons");
+
+        floatingButtons.style.transition = "right 0.5s ease-in-out";
+        floatingButtons.style.right =
+          parseFloat(
+            getComputedStyle(floatingButtons).right.replace("px", "")
+          ) === 15
+            ? "276px"
+            : "15px";
+      }
+
+      function toggleFloatingButtons() {
+        toggleFloatingButtonPosition();
+        toggleLogoMirrorEffect();
+        rotateArrow();
+        toggleButtonText();
+        animatePersonalImg();
+        animateButton();
+        animateDataElements();
+        animateNameElements(rightValue);
+      }
+
+      //logo animation
+      function toggleLogoMirrorEffect() {
+        let logo = document.querySelector(".logo-img");
+        logo.classList.toggle("flipped");
+      }
+
+      //arrow img animation
+      function rotateArrow() {
+        let arrow = document.querySelector(".personal-container button img");
+        arrow.style.transition = "transform 0.5s ease-in-out";
+
+        let isRotated = arrow.style.transform.includes("rotate(-180deg)");
+
+        arrow.style.transform = isRotated
+          ? "rotate(0deg)"
+          : "translateX(50px) translateY(2px) rotate(-180deg)";
+      }
+
+      // change text in button animation
+      function animateButtonContainer() {
+        let buttonsContainer = document.querySelector(".buttons-container");
+
+        let isFlipped = document
+          .querySelector(".personal-container button")
+          .classList.contains("flipped");
+
+        buttonsContainer.classList.add("fade-in");
+
+        let buttons = buttonsContainer.querySelectorAll("button");
+
+        buttons.forEach(function (button) {
+          let imgInButton = button.querySelector("img");
+          let arabicText = button.querySelector(".arabic-text");
+          let englishText = button.querySelector(".english-text");
+
+          imgInButton.style.transition = "transform 0.5s ease-in-out";
+          arabicText.style.transition = "opacity 0.5s ease-in-out";
+          englishText.style.transition = "opacity 0.5s ease-in-out";
+
+          if (isFlipped) {
+            imgInButton.style.transform = "translateX(50px)";
+            arabicText.style.opacity = 1;
+            arabicText.style.transform = "translateX(-20px)";
+            englishText.style.opacity = 0;
+          } else {
+            imgInButton.style.transform = "translateX(0)";
+            arabicText.style.opacity = 0;
+            englishText.style.opacity = 1;
+          }
+        });
+      }
+
+      // language change button animation
+      function toggleButtonText() {
+        let button = document.querySelector(".personal-container button");
+        button.classList.toggle("flipped");
+
+        animateButtonContainer();
+      }
+
+      //personal img animation
+      function animatePersonalImg() {
+        let personalImg = document.querySelector(".personal-img");
+        personalImg.style.transition = "transform 0.5s ease-in-out";
+
+        let isTranslated =
+          personalImg.style.transform.includes("translateX(212px)");
+
+        personalImg.style.transform = isTranslated
+          ? "translateX(0)"
+          : "translateX(212px)";
+      }
+
+      //move button animation
+      function animateButton() {
+        let button = document.querySelector(".personal-container button");
+        button.style.transition = "transform 0.5s cubic-bezier(1,1,1,1)";
+
+        // Check if the button is currently translated
+        let isTranslated = button.style.transform.includes("translateX(-200%)");
+
+        button.style.transform = isTranslated
+          ? "translateX(0)"
+          : "translateX(-200%)";
+      }
+
+      // data elements icon's animation
+      function animateDataElements() {
+        let dataElements = document.querySelectorAll(".data-element");
+        dataElements.forEach(function (dataElement) {
+          let imgInDataElement = dataElement.querySelector("img");
+
+          imgInDataElement.style.transition = "transform 0.5s ease-in-out";
+
+          // Check if the dataElement is currently translated
+          let isTranslated =
+            imgInDataElement.style.transform.includes("translateX(1000%)");
+
+          imgInDataElement.style.transform = isTranslated
+            ? "translateX(0)"
+            : "translateX(1000%)";
+        });
+      }
+
+      // name & position animation
+      // function animateNameElements(rightValue) {
+      //   let nameContainer = document.querySelector(".name-container");
+      //   let nameH1 = nameContainer.querySelector("h1");
+      //   let nameH2 = nameContainer.querySelector("h2");
+
+      //   nameH1.style.transition =
+      //     "opacity 1s ease-in-out, transform 0.5s ease-in-out";
+      //   nameH2.style.transition =
+      //     "opacity 1s ease-in-out, transform 0.5s ease-in-out";
+
+      //   let isFlipped = document
+      //     .querySelector(".personal-container button")
+      //     .classList.contains("flipped");
+
+      //   if (rightValue === 24) {
+      //     nameH1.style.transform = isFlipped
+      //       ? "translateX(50%)"
+      //       : "translateX(-50%)";
+      //     nameH1.textContent = isFlipped ? "عامر مختار" : "Aamash Mukhtar";
+      //     nameH2.style.transform = "translateX(50%)";
+      //     nameH2.textContent = isFlipped ? "المدير العام" : "Managing Director";
+      //   } else {
+      //     nameH1.style.transform = "translateX(0)";
+      //     nameH1.textContent = "Aamash Mukhtar";
+      //     nameH2.style.transform = "translateX(0)";
+      //     nameH2.textContent = "Managing Director";
+      //   }
+      // }
+
+      //   POPUP
+
+      //   function openPopup() {
+      //     document.getElementById("overlay").style.display = "flex";
+      //   }
+
+      function closePopup() {
+        document.getElementById("overlay").style.display = "none";
+      }
+
+      // Copy text
+
+      function copyText() {
+        const inputField = document.getElementById("myInput");
+        const copyMessage = document.getElementById("copyMessage");
+
+        try {
+          document.execCommand("copy");
+
+          copyMessage.textContent = "Skopiowano do schowka";
+
+          setTimeout(function () {
+            copyMessage.textContent = "";
+          }, 1500);
+        } catch (err) {
+          console.error("Błąd podczas kopiowania do schowka:", err);
+          copyMessage.textContent = "Błąd podczas kopiowania do schowka";
+        }
+      }
+
+      //CREATE CONTACT
+
+      function createContact() {
+        const contactName = "";
+        const phoneNumber = "";
+        const emailAddress = "";
+        const homepage = "";
+
+        const vCardContent =
+          "BEGIN:VCARD\n" +
+          "VERSION:3.0\n" +
+          "FN:" +
+          contactName +
+          "\n" +
+          "TEL:" +
+          phoneNumber +
+          "\n" +
+          "EMAIL:" +
+          emailAddress +
+          "\n" +
+          (homepage ? "URL:" + homepage + "\n" : "") +
+          "END:VCARD";
+
+        const blob = new Blob([vCardContent], { type: "text/vcard" });
+
+        const link = document.getElementById("downloadLink");
+        link.href = window.URL.createObjectURL(blob);
+        link.download = "contact.vcf";
+
+        link.onclick = function () {
+          document.getElementById("overlay").style.display = "none";
+        };
+      }
+    </script>
+  </body>
+</html>
