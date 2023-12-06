@@ -145,8 +145,8 @@
         font-family: "AtypDisplay", sans-serif;
         letter-spacing: 0.8px;
         position: absolute;
-        right: 100%;
-        transition: all 0.8s;
+        right: 50%;
+        transition: all 1s;
       }
 
       #position-ang {
@@ -155,8 +155,8 @@
         font-family: "AtypText", sans-serif;
         position: absolute;
         top: 60px;
-        right: 100%;
-        transition: all 0.8s;
+        right: 60%;
+        transition: all 1s;
       }
 
       #name-arabic {
@@ -167,7 +167,7 @@
         line-height: 26px;
         position: absolute;
         right: 24px;
-        transition: all 1.2s;
+        transition: all 1.3s;
       }
 
       #position-arabic {
@@ -179,7 +179,7 @@
         position: absolute;
         top: 60px;
         right: 24px;
-        transition: all 1.2s;
+        transition: all 1.3s;
       }
       .data-element-container {
         margin: 0 24px 0 24px;
@@ -362,7 +362,7 @@
       <div class="logo">
         <img
           src="assets/logo.png"
-          alt=""
+          alt="logo"
           class="logo-img"
           width="222px"
           height="56px"
@@ -551,10 +551,10 @@
       <!-- floating buttons -->
       <div class="floating-buttons" id="floatingButtons">
         <a onclick="openPopup()">
-          <img src="assets/share.png" alt="" height="66" width="66" />
+          <img src="assets/share.png" alt="icon" height="66" width="66" />
         </a>
         <a onclick="createContact()" id="downloadLink">
-          <img src="assets/addcontact.png" alt="" height="66" width="66" />
+          <img src="assets/addcontact.png" alt="icon" height="66" width="66" />
         </a>
       </div>
     </div>
@@ -650,83 +650,20 @@
       </div> -->
     <!-- </div> -->
     <script>
-      function toggleFloatingButtonPosition() {
-        let floatingButtons = document.getElementById("floatingButtons");
-
-        floatingButtons.style.transition = "right 1s ease-in-out";
-        floatingButtons.style.right =
-          parseFloat(
-            getComputedStyle(floatingButtons).right.replace("px", "")
-          ) === 15
-            ? "276px"
-            : "15px";
-      }
-
       function toggleFloatingButtons() {
         toggleFloatingButtonPosition();
-        toggleLogoMirrorEffect();
+        toggleLogo();
         rotateArrow();
         toggleButtonText();
         animatePersonalImg();
         animateButton();
         animateDataElements();
-        MoveDataContent();
+        moveDataContent();
         moveHeaders();
       }
 
-      function MoveDataContent() {
-        let linkElements = document.getElementsByClassName("link-element");
-        let arabicTel = document.getElementById("arabic-tel");
-
-        for (let i = 0; i < linkElements.length; i++) {
-          linkElements[i].classList.toggle("move-data");
-        }
-
-        let isDefaultText = arabicTel.textContent.trim() === "+971 55 414 9343";
-
-        arabicTel.textContent = isDefaultText
-          ? "٣٤٣٩٤١٤٥٥١٧٩"
-          : "+971 55 414 9343";
-
-        if (!isDefaultText) {
-          arabicTel.style.fontFamily = "AtypText";
-          arabicTel.style.fontWeight = "400";
-          arabicTel.style.lineHeight = "18px";
-          arabicTel.style.letterSpacing = "0";
-          arabicTel.style.top = "12px";
-        } else {
-          arabicTel.style.fontFamily = "Tajawal";
-          arabicTel.style.fontWeight = "300";
-          arabicTel.style.lineHeight = "18px";
-          arabicTel.style.letterSpacing = "2.7px";
-          arabicTel.style.top = "15px";
-        }
-      }
-
-      function moveHeaders() {
-        let nameAng = document.getElementById("name-ang");
-        let nameArabic = document.getElementById("name-arabic");
-        let positionAng = document.getElementById("position-ang");
-        let positionArabic = document.getElementById("position-arabic");
-
-        if (nameAng && nameArabic) {
-          nameAng.classList.toggle("move-headers");
-          let isNameHidden =
-            parseFloat(window.getComputedStyle(nameAng).opacity) === 0;
-
-          positionAng.classList.toggle("move-headers");
-          let isPositionHidden =
-            parseFloat(window.getComputedStyle(nameAng).opacity) === 0;
-
-          nameAng.style.opacity = isNameHidden ? 1 : 0;
-          nameArabic.style.opacity = isNameHidden ? 0 : 1;
-          positionAng.style.opacity = isPositionHidden ? 1 : 0;
-          positionArabic.style.opacity = isPositionHidden ? 0 : 1;
-        }
-      }
-
       //logo animation
-      function toggleLogoMirrorEffect() {
+      function toggleLogo() {
         let logo = document.querySelector(".logo-img");
         logo.classList.toggle("flipped");
       }
@@ -796,12 +733,34 @@
         animateButtonContainer();
       }
 
+      //headers move animation
+      function moveHeaders() {
+        let nameAng = document.getElementById("name-ang");
+        let nameArabic = document.getElementById("name-arabic");
+        let positionAng = document.getElementById("position-ang");
+        let positionArabic = document.getElementById("position-arabic");
+
+        if (nameAng && nameArabic) {
+          nameAng.classList.toggle("move-headers");
+          let isNameHidden =
+            parseFloat(window.getComputedStyle(nameAng).opacity) === 0;
+
+          positionAng.classList.toggle("move-headers");
+          let isPositionHidden =
+            parseFloat(window.getComputedStyle(nameAng).opacity) === 0;
+
+          nameAng.style.opacity = isNameHidden ? 1 : 0;
+          nameArabic.style.opacity = isNameHidden ? 0 : 1;
+          positionAng.style.opacity = isPositionHidden ? 1 : 0;
+          positionArabic.style.opacity = isPositionHidden ? 0 : 1;
+        }
+      }
+
       //move button animation
       function animateButton() {
         let button = document.querySelector(".personal-container button");
         button.style.transition = "transform .8s ease-out";
 
-        // Check if the button is currently translated
         let isTranslated =
           button.style.transform.includes("translateX(-210px)");
 
@@ -825,6 +784,49 @@
             ? "translateX(0)"
             : "translateX(1000%)";
         });
+      }
+
+      //data element content animation
+      function moveDataContent() {
+        let linkElements = document.getElementsByClassName("link-element");
+        let arabicTel = document.getElementById("arabic-tel");
+
+        for (let i = 0; i < linkElements.length; i++) {
+          linkElements[i].classList.toggle("move-data");
+        }
+
+        let isDefaultText = arabicTel.textContent.trim() === "+971 55 414 9343";
+
+        arabicTel.textContent = isDefaultText
+          ? "٣٤٣٩٤١٤٥٥١٧٩"
+          : "+971 55 414 9343";
+
+        if (!isDefaultText) {
+          arabicTel.style.fontFamily = "AtypText";
+          arabicTel.style.fontWeight = "400";
+          arabicTel.style.lineHeight = "18px";
+          arabicTel.style.letterSpacing = "0";
+          arabicTel.style.top = "12px";
+        } else {
+          arabicTel.style.fontFamily = "Tajawal";
+          arabicTel.style.fontWeight = "300";
+          arabicTel.style.lineHeight = "18px";
+          arabicTel.style.letterSpacing = "2.7px";
+          arabicTel.style.top = "15px";
+        }
+      }
+
+      // floatingbuttons animation
+      function toggleFloatingButtonPosition() {
+        let floatingButtons = document.getElementById("floatingButtons");
+
+        floatingButtons.style.transition = "right 1s ease-in-out";
+        floatingButtons.style.right =
+          parseFloat(
+            getComputedStyle(floatingButtons).right.replace("px", "")
+          ) === 15
+            ? "276px"
+            : "15px";
       }
 
       //   POPUP
