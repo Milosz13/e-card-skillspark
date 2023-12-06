@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flex Container Animation</title>
+    <style>
+      .container {
+        position: relative;
+        overflow: hidden;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div
+        class="flex-container"
+        style="
+          display: flex;
+          width: 349px;
+          height: 718px;
+          flex-direction: column;
+          justify-content: center;
+          align-items: flex-start;
+          gap: 19.92px;
+          flex-shrink: 0;
+          transition: all 1s ease-in-out;
+        "
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="200"
+          height="255"
+          viewBox="0 0 200 255"
+          fill="none"
+          style="
+            position: absolute;
+            top: 0;
+            left: 160px;
+            opacity: 0.15;
+            transition: all 1s ease-in-out;
+          "
+          class="svg1"
+        >
+          <path
+            d="M348.69 -94L288.91 -94C287.26 -40.34 273.72 8.11001 248.23 51.3C222.82 94.46 188.45 128.77 145.28 154.2C102.12 179.66 53.7 193.25 -5.5809e-05 194.9L-6.10352e-05 254.68C63.6499 253.55 121.9 237.52 174.76 206.52C227.62 175.52 269.55 133.6 300.55 80.76C331.55 27.85 347.6 -30.37 348.69 -94Z"
+            fill="#CDCDC8"
+          />
+        </svg>
+        <!-- <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="200"
+          height="350"
+          viewBox="0 0 200 350"
+          fill="none"
+          style="position: absolute; top: 280px; left: 160px; opacity: 0.15"
+          class="svg2"
+        >
+          <path
+            d="M-3.05543e-05 0.609955L-3.66503e-05 70.34C51.49 71.99 98.11 85.13 139.87 109.77C181.68 134.39 214.89 167.61 239.52 209.4C264.17 251.16 277.31 297.81 278.96 349.27L348.69 349.27C347.6 285.62 331.55 227.37 300.55 174.53C269.55 121.66 227.63 79.74 174.76 48.72C121.89 17.72 63.65 1.68995 -3.05535e-05 0.599945"
+            fill="#CDCDC8"
+          />
+        </svg> -->
+      </div>
+      <button onclick="animateSVG()">Animate</button>
+    </div>
+
+    <script>
+      function animateSVG() {
+        const container = document.querySelector(".flex-container");
+        const svg1 = document.querySelector(".svg1");
+
+        // Zmień pozycję pierwszego SVG na odbicie lustrzane względem osi X
+        svg1.style.transform = "rotateX(180deg)";
+
+        container.style.transform = "scaleX(-1)";
+        // svg1.style.transform = "scaleY(-1)";
+      }
+    </script>
+  </body>
+</html>

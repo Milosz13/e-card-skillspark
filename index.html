@@ -19,22 +19,6 @@
         font-weight: normal;
         font-style: normal;
       }
-      /* @font-face {
-        font-family: "AtypDisplayMedium";
-        src: url("fonts/AtypDisplay-Medium.woff2") format("woff2"),
-          url("fonts/AtypDispla-Medium.woff") format("woff");
-
-        font-weight: normal;
-        font-style: normal;
-      } */
-      /* @font-face {
-        font-family: "AtypDisplayLight";
-        src: url("fonts/AtypDisplay-Light.woff2") format("woff2"),
-          url("fonts/AtypDispla-Light.woff") format("woff");
-
-        font-weight: normal;
-        font-style: normal;
-      } */
 
       @font-face {
         font-family: "AtypText";
@@ -73,7 +57,7 @@
       }
 
       .logo img {
-        transition: transform 0.5s ease-in-out;
+        transition: transform 1s ease-out;
         margin: 0 24px;
       }
 
@@ -100,7 +84,6 @@
         position: absolute;
         top: 2px;
         left: 10px;
-        transition: transform 0.5s ease-in-out;
       }
 
       .personal-container button span {
@@ -137,7 +120,8 @@
       }
 
       .name-container {
-        margin: 34px 24px 34px 24px;
+        padding: 34px 24px 34px 24px;
+        width: 100%;
         position: relative;
       }
 
@@ -145,22 +129,54 @@
       .name-container h2 {
         color: #373c37;
         font-weight: 400;
+        display: inline;
+        white-space: nowrap;
+        text-align: right;
+        left: 24px;
       }
 
-      .name-container h1 {
+      #name-ang {
         font-size: 20px;
         line-height: 20px;
-        padding-bottom: 12px;
         font-family: "AtypDisplay", sans-serif;
         letter-spacing: 0.8px;
+        position: absolute;
+        right: 100%;
+        transition: all 1s;
       }
 
-      .name-container h2 {
+      #position-ang {
         font-size: 16px;
         line-height: 16px;
         font-family: "AtypText", sans-serif;
+        position: absolute;
+        top: 60px;
+        right: 100%;
+        transition: all 1.5s;
       }
 
+      #name-arabic {
+        opacity: 0;
+        font-family: Tajawal;
+        font-size: 26px;
+        font-weight: 500;
+        line-height: 26px;
+        position: absolute;
+        right: 24px;
+        transition: all 1s;
+      }
+
+      #position-arabic {
+        font-family: Tajawal;
+        font-size: 20px;
+        font-weight: 400;
+        display: inline;
+        opacity: 0;
+        position: absolute;
+        top: 60px;
+        right: 24px;
+        transition: all 1.5s;
+      }
       .data-element-container {
         margin: 0 24px 0 24px;
       }
@@ -172,6 +188,7 @@
         align-items: flex-start;
         gap: 16px;
         align-self: stretch;
+        margin-top: 34px;
       }
 
       .buttons-container button {
@@ -216,7 +233,7 @@
       }
       .contact-container {
         margin-top: 34px;
-        padding-bottom: 89px;
+        padding-bottom: 93px;
       }
       .data-element-container {
         border-bottom: 0.5px dashed #cdcdc8;
@@ -225,6 +242,7 @@
 
       .data-element {
         padding: 8px 12px;
+        width: 100%;
         position: relative;
       }
 
@@ -235,17 +253,17 @@
         font-weight: 400;
         line-height: 18px;
         color: #373c37;
-        vertical-align: middle;
         font-family: "AtypText", sans-serif;
+        left: 42px;
+        top: 12px;
+        position: absolute;
+        text-align: right;
+        white-space: nowrap;
+        right: 100%;
+        transition: all 0.8s ease-out;
       }
 
       .data-element svg {
-        vertical-align: middle;
-        margin-right: 8px;
-        width: 26px;
-        height: 26px;
-      }
-      .data-element img {
         vertical-align: middle;
         margin-right: 8px;
         width: 26px;
@@ -256,7 +274,7 @@
         position: absolute;
         bottom: 75px;
         right: 15px;
-        transition: right 0.5s ease-in-out;
+        transition: right 1s ease-in-out;
       }
 
       .popup-link-element {
@@ -296,10 +314,15 @@
       }
 
       /* Add these styles to your existing CSS code */
-      .fade,
-      .fade-in,
-      .fade-out {
-        transition: opacity 0.5s ease-in-out;
+
+      .moved {
+        right: 24px !important;
+        left: 80px !important;
+      }
+
+      .moved50 {
+        right: 50px !important;
+        left: 42px !important;
       }
     </style>
   </head>
@@ -357,7 +380,9 @@
       </div>
       <div class="name-container" id="nameContainer">
         <h1 id="name-ang">Aamash Mukhtar</h1>
-        <h2 id="position-ang">Managing Director</h2>
+        <h1 id="position-ang">Managing Director</h1>
+        <h2 id="name-arabic">عماش مختار</h2>
+        <h2 id="position-arabic">المدير العام</h2>
       </div>
       <div class="buttons-container">
         <button onclick="window.location.href='tel:+971 55 414 9343';">
@@ -390,7 +415,7 @@
                 fill="#373C37"
               />
             </svg>
-            <a class="link-element" href="tel:+971 55 414 9343"
+            <a class="link-element" id="arabic-tel" href="tel:+971 55 414 9343"
               >+971 55 414 9343</a
             >
           </div>
@@ -577,7 +602,7 @@
       function toggleFloatingButtonPosition() {
         let floatingButtons = document.getElementById("floatingButtons");
 
-        floatingButtons.style.transition = "right 0.5s ease-in-out";
+        floatingButtons.style.transition = "right 1s ease-in-out";
         floatingButtons.style.right =
           parseFloat(
             getComputedStyle(floatingButtons).right.replace("px", "")
@@ -594,7 +619,59 @@
         animatePersonalImg();
         animateButton();
         animateDataElements();
-        animateNameElements();
+        moveText();
+        moveHeaders();
+      }
+
+      function moveText() {
+        let linkElements = document.getElementsByClassName("link-element");
+        let arabicTel = document.getElementById("arabic-tel");
+
+        for (let i = 0; i < linkElements.length; i++) {
+          linkElements[i].classList.toggle("moved50");
+        }
+
+        let isDefaultText = arabicTel.textContent.trim() === "+971 55 414 9343";
+
+        arabicTel.textContent = isDefaultText
+          ? "٩٧١٥٥٤١٤٩٣٤٣"
+          : "+971 55 414 9343";
+
+        if (!isDefaultText) {
+          arabicTel.style.fontFamily = "AtypText";
+          arabicTel.style.fontWeight = "400";
+          arabicTel.style.lineHeight = "18px";
+          arabicTel.style.letterSpacing = "0";
+          arabicTel.style.top = "12px";
+        } else {
+          arabicTel.style.fontFamily = "Tajawal";
+          arabicTel.style.fontWeight = "300";
+          arabicTel.style.lineHeight = "18px";
+          arabicTel.style.letterSpacing = "2.7px";
+          arabicTel.style.top = "15px";
+        }
+      }
+
+      function moveHeaders() {
+        let nameAng = document.getElementById("name-ang");
+        let nameArabic = document.getElementById("name-arabic");
+        let positionAng = document.getElementById("position-ang");
+        let positionArabic = document.getElementById("position-arabic");
+
+        if (nameAng && nameArabic) {
+          nameAng.classList.toggle("moved");
+          let isNameHidden =
+            parseFloat(window.getComputedStyle(nameAng).opacity) === 0;
+
+          positionAng.classList.toggle("moved");
+          let isPositionHidden =
+            parseFloat(window.getComputedStyle(nameAng).opacity) === 0;
+
+          nameAng.style.opacity = isNameHidden ? 1 : 0;
+          nameArabic.style.opacity = isNameHidden ? 0 : 1;
+          positionAng.style.opacity = isPositionHidden ? 1 : 0;
+          positionArabic.style.opacity = isPositionHidden ? 0 : 1;
+        }
       }
 
       //logo animation
@@ -603,10 +680,23 @@
         logo.classList.toggle("flipped");
       }
 
+      //personal img animation
+      function animatePersonalImg() {
+        let personalImg = document.querySelector(".personal-img");
+        personalImg.style.transition = "transform 1s ease-out";
+
+        let isTranslated =
+          personalImg.style.transform.includes("translateX(212px)");
+
+        personalImg.style.transform = isTranslated
+          ? "translateX(0)"
+          : "translateX(212px)";
+      }
+
       //arrow img animation
       function rotateArrow() {
         let arrow = document.querySelector(".personal-container button img");
-        arrow.style.transition = "transform 0.5s ease-in-out";
+        arrow.style.transition = "transform 0.8s ease-in-out";
 
         let isRotated = arrow.style.transform.includes("rotate(-180deg)");
 
@@ -623,8 +713,6 @@
           .querySelector(".personal-container button")
           .classList.contains("flipped");
 
-        buttonsContainer.classList.add("fade-in");
-
         let buttons = buttonsContainer.querySelectorAll("button");
 
         buttons.forEach(function (button) {
@@ -632,9 +720,9 @@
           let arabicText = button.querySelector(".arabic-text");
           let englishText = button.querySelector(".english-text");
 
-          imgInButton.style.transition = "transform 0.5s ease-in-out";
-          arabicText.style.transition = "opacity 0.5s ease-in-out";
-          englishText.style.transition = "opacity 0.5s ease-in-out";
+          imgInButton.style.transition = "transform .8s ease-in-out";
+          arabicText.style.transition = "opacity 0.8s ease-in-out";
+          englishText.style.transition = "opacity 0.8s ease-in-out";
 
           if (isFlipped) {
             imgInButton.style.transform = "translateX(50px)";
@@ -657,23 +745,10 @@
         animateButtonContainer();
       }
 
-      //personal img animation
-      function animatePersonalImg() {
-        let personalImg = document.querySelector(".personal-img");
-        personalImg.style.transition = "transform 0.5s ease-in-out";
-
-        let isTranslated =
-          personalImg.style.transform.includes("translateX(212px)");
-
-        personalImg.style.transform = isTranslated
-          ? "translateX(0)"
-          : "translateX(212px)";
-      }
-
       //move button animation
       function animateButton() {
         let button = document.querySelector(".personal-container button");
-        button.style.transition = "transform 0.5s cubic-bezier(1,1,1,1)";
+        button.style.transition = "transform .8s ease-out";
 
         // Check if the button is currently translated
         let isTranslated =
@@ -690,9 +765,8 @@
         dataElements.forEach(function (dataElement) {
           let imgInDataElement = dataElement.querySelector("svg");
 
-          imgInDataElement.style.transition = "transform 0.5s ease-in-out";
+          imgInDataElement.style.transition = "transform .8s ease-out";
 
-          // Check if the dataElement is currently translated
           let isTranslated =
             imgInDataElement.style.transform.includes("translateX(1000%)");
 
@@ -703,28 +777,6 @@
       }
 
       // name & position animation
-      //       function animateNameElements() {
-      //   let nameContainer = document.querySelector(".name-container");
-      //   let nameH1 = nameContainer.querySelector("h1");
-      //   let nameH2 = nameContainer.querySelector("h2");
-
-      //   nameH1.style.transition = "opacity 1s ease-in-out, transform 0.5s ease-in-out";
-      //   nameH2.style.transition = "opacity 1s ease-in-out, transform 0.5s ease-in-out";
-
-      //   let isFlipped = document.querySelector(".personal-container button").classList.contains("flipped");
-
-      //   if (isFlipped) {
-      //     nameH1.style.transform = "translateX(50%)";
-      //     nameH1.textContent = "عامر مختار";
-      //     nameH2.style.transform = "translateX(50%)";
-      //     nameH2.textContent = "المدير العام";
-      //   } else {
-      //     nameH1.style.transform = "translateX(0)";
-      //     nameH1.textContent = "Aamash Mukhtar";
-      //     nameH2.style.transform = "translateX(0)";
-      //     nameH2.textContent = "Managing Director";
-      //   }
-      // }
 
       //   POPUP
 
