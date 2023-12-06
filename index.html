@@ -31,12 +31,6 @@
         box-sizing: border-box;
       }
       body {
-        background: linear-gradient(
-            0deg,
-            rgba(55, 60, 55, 0.05) 0%,
-            rgba(55, 60, 55, 0.05) 100%
-          ),
-          #fff;
       }
 
       .container {
@@ -61,6 +55,10 @@
         margin: 0 24px;
       }
 
+      .logo-img.flipped {
+        transform: translateX(calc(100% - 132px));
+      }
+
       .personal-container {
         display: flex;
         padding: 0px 24px;
@@ -80,7 +78,7 @@
         position: relative;
       }
 
-      .personal-container button img {
+      .personal-container button svg {
         position: absolute;
         top: 2px;
         left: 10px;
@@ -142,7 +140,7 @@
         letter-spacing: 0.8px;
         position: absolute;
         right: 100%;
-        transition: all 1s;
+        transition: all 0.8s;
       }
 
       #position-ang {
@@ -152,7 +150,7 @@
         position: absolute;
         top: 60px;
         right: 100%;
-        transition: all 1.5s;
+        transition: all 0.8s;
       }
 
       #name-arabic {
@@ -163,7 +161,7 @@
         line-height: 26px;
         position: absolute;
         right: 24px;
-        transition: all 1s;
+        transition: all 1.2s;
       }
 
       #position-arabic {
@@ -175,7 +173,7 @@
         position: absolute;
         top: 60px;
         right: 24px;
-        transition: all 1.5s;
+        transition: all 1.2s;
       }
       .data-element-container {
         margin: 0 24px 0 24px;
@@ -203,7 +201,7 @@
         position: relative;
       }
 
-      .buttons-container button img {
+      .buttons-container button svg {
         position: absolute;
         top: 8px;
         left: 35px;
@@ -254,13 +252,13 @@
         line-height: 18px;
         color: #373c37;
         font-family: "AtypText", sans-serif;
-        left: 42px;
+        left: 46px;
         top: 12px;
         position: absolute;
         text-align: right;
         white-space: nowrap;
         right: 100%;
-        transition: all 0.8s ease-out;
+        transition: all 1s ease-out;
       }
 
       .data-element svg {
@@ -277,7 +275,23 @@
         transition: right 1s ease-in-out;
       }
 
-      .popup-link-element {
+      .floating-buttons a {
+        display: block;
+      }
+
+      .move-headers {
+        right: 24px !important;
+        left: 10px !important;
+      }
+
+      .move-data {
+        right: 50px !important;
+        left: 42px !important;
+      }
+
+      /* POPUP STYLE */
+
+      /* .popup-link-element {
         font-size: 13px;
         color: #5a5a5a;
         font-weight: 400;
@@ -307,23 +321,7 @@
 
       #closeButton {
         cursor: pointer;
-      }
-
-      .logo-img.flipped {
-        transform: translateX(calc(100% - 132px));
-      }
-
-      /* Add these styles to your existing CSS code */
-
-      .moved {
-        right: 24px !important;
-        left: 80px !important;
-      }
-
-      .moved50 {
-        right: 50px !important;
-        left: 42px !important;
-      }
+      } */
     </style>
   </head>
   <body>
@@ -373,7 +371,26 @@
           class="personal-img"
         />
         <button onclick="toggleFloatingButtons()" class="animated-button">
-          <img src="assets/arrow.png" width="26" height="26" />
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="26"
+            height="26"
+            viewBox="0 0 26 26"
+            fill="none"
+          >
+            <path
+              d="M17.1034 21.7323L15.5688 20.1977L22.7684 12.9982L15.5688 5.79864L17.1034 4.26774L25.8338 12.9982L17.1034 21.7323Z"
+              fill="#373C37"
+            />
+            <path
+              d="M10.7271 12.4566H23.7108V13.5399H10.7271V12.4566Z"
+              fill="#373C37"
+            />
+            <path
+              d="M0.252808 12.8032H12.435V13.1643H0.252808V12.8032Z"
+              fill="#373C37"
+            />
+          </svg>
           <span class="arabic-text">عربي</span>
           <span class="english-text">English</span>
         </button>
@@ -386,12 +403,40 @@
       </div>
       <div class="buttons-container">
         <button onclick="window.location.href='tel:+971 55 414 9343';">
-          <img src="assets/iphone.png" width="26" height="26" />
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="27"
+            height="26"
+            viewBox="0 0 27 26"
+            fill="none"
+          >
+            <path
+              d="M20.5966 24.8699H6.40332V1.13013H20.5966V24.8699ZM6.76438 24.5088H20.2356V1.49119H6.76438V24.5088Z"
+              fill="#373C37"
+            />
+            <path
+              d="M11.5232 3.18095H15.4732V3.54201H11.5232V3.18095ZM12.3464 21.2557H14.65V23.422H12.3464V21.2557ZM7.73926 4.62881H19.2643V5.71199H7.73926V4.62881ZM7.73926 19.4612H19.2643V20.5444H7.73926V19.4612Z"
+              fill="#373C37"
+            />
+          </svg>
           <span class="english-text">Call</span>
           <span class="arabic-text">يتصل</span>
         </button>
         <button onclick="location.href='mailto:aamash.mukhtar@skillspark.com';">
-          <img src="assets/imail.png" width="26" height="26" />
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="26"
+            height="26"
+            viewBox="0 0 26 26"
+            fill="none"
+          >
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M2.70194 21.2629H12.9982H23.2981V14.3377H22.2233V20.1797H12.9982H3.77671V14.3377H2.70194V21.2629ZM22.406 12.9657H24.5556V4.19554H1.44446V12.9657H3.594V6.36191H22.406V12.9657ZM4.45534 7.08913L4.21133 7.35532L13 15.4116L21.7887 7.35532L21.5447 7.08913L13 14.9217L4.45534 7.08913Z"
+              fill="#373C37"
+            />
+          </svg>
           <span class="arabic-text">رسالة</span>
           <span class="english-text">E-mail</span>
         </button>
@@ -502,7 +547,7 @@
         <a onclick="openPopup()">
           <img src="assets/share.png" alt="" height="66" width="66" />
         </a>
-        <a onclick="createContact()" style="display: block" id="downloadLink">
+        <a onclick="createContact()" id="downloadLink">
           <img src="assets/addcontact.png" alt="" height="66" width="66" />
         </a>
       </div>
@@ -619,22 +664,22 @@
         animatePersonalImg();
         animateButton();
         animateDataElements();
-        moveText();
+        MoveDataContent();
         moveHeaders();
       }
 
-      function moveText() {
+      function MoveDataContent() {
         let linkElements = document.getElementsByClassName("link-element");
         let arabicTel = document.getElementById("arabic-tel");
 
         for (let i = 0; i < linkElements.length; i++) {
-          linkElements[i].classList.toggle("moved50");
+          linkElements[i].classList.toggle("move-data");
         }
 
         let isDefaultText = arabicTel.textContent.trim() === "+971 55 414 9343";
 
         arabicTel.textContent = isDefaultText
-          ? "٩٧١٥٥٤١٤٩٣٤٣"
+          ? "٣٤٣٩٤١٤٥٥١٧٩"
           : "+971 55 414 9343";
 
         if (!isDefaultText) {
@@ -659,11 +704,11 @@
         let positionArabic = document.getElementById("position-arabic");
 
         if (nameAng && nameArabic) {
-          nameAng.classList.toggle("moved");
+          nameAng.classList.toggle("move-headers");
           let isNameHidden =
             parseFloat(window.getComputedStyle(nameAng).opacity) === 0;
 
-          positionAng.classList.toggle("moved");
+          positionAng.classList.toggle("move-headers");
           let isPositionHidden =
             parseFloat(window.getComputedStyle(nameAng).opacity) === 0;
 
@@ -695,7 +740,7 @@
 
       //arrow img animation
       function rotateArrow() {
-        let arrow = document.querySelector(".personal-container button img");
+        let arrow = document.querySelector(".personal-container button svg");
         arrow.style.transition = "transform 0.8s ease-in-out";
 
         let isRotated = arrow.style.transform.includes("rotate(-180deg)");
@@ -716,21 +761,21 @@
         let buttons = buttonsContainer.querySelectorAll("button");
 
         buttons.forEach(function (button) {
-          let imgInButton = button.querySelector("img");
+          let svgInButton = button.querySelector("svg");
           let arabicText = button.querySelector(".arabic-text");
           let englishText = button.querySelector(".english-text");
 
-          imgInButton.style.transition = "transform .8s ease-in-out";
+          svgInButton.style.transition = "transform .8s ease-in-out";
           arabicText.style.transition = "opacity 0.8s ease-in-out";
           englishText.style.transition = "opacity 0.8s ease-in-out";
 
           if (isFlipped) {
-            imgInButton.style.transform = "translateX(50px)";
+            svgInButton.style.transform = "translateX(50px)";
             arabicText.style.opacity = 1;
             arabicText.style.transform = "translateX(-20px)";
             englishText.style.opacity = 0;
           } else {
-            imgInButton.style.transform = "translateX(0)";
+            svgInButton.style.transform = "translateX(0)";
             arabicText.style.opacity = 0;
             englishText.style.opacity = 1;
           }
@@ -763,20 +808,18 @@
       function animateDataElements() {
         let dataElements = document.querySelectorAll(".data-element");
         dataElements.forEach(function (dataElement) {
-          let imgInDataElement = dataElement.querySelector("svg");
+          let svgInDataElement = dataElement.querySelector("svg");
 
-          imgInDataElement.style.transition = "transform .8s ease-out";
+          svgInDataElement.style.transition = "transform 1s ease-out";
 
           let isTranslated =
-            imgInDataElement.style.transform.includes("translateX(1000%)");
+            svgInDataElement.style.transform.includes("translateX(1000%)");
 
-          imgInDataElement.style.transform = isTranslated
+          svgInDataElement.style.transform = isTranslated
             ? "translateX(0)"
             : "translateX(1000%)";
         });
       }
-
-      // name & position animation
 
       //   POPUP
 
@@ -784,29 +827,29 @@
       //     document.getElementById("overlay").style.display = "flex";
       //   }
 
-      function closePopup() {
-        document.getElementById("overlay").style.display = "none";
-      }
+      // function closePopup() {
+      //   document.getElementById("overlay").style.display = "none";
+      // }
 
       // Copy text
 
-      function copyText() {
-        const inputField = document.getElementById("myInput");
-        const copyMessage = document.getElementById("copyMessage");
+      // function copyText() {
+      //   const inputField = document.getElementById("myInput");
+      //   const copyMessage = document.getElementById("copyMessage");
 
-        try {
-          document.execCommand("copy");
+      //   try {
+      //     document.execCommand("copy");
 
-          copyMessage.textContent = "Skopiowano do schowka";
+      //     copyMessage.textContent = "Skopiowano do schowka";
 
-          setTimeout(function () {
-            copyMessage.textContent = "";
-          }, 1500);
-        } catch (err) {
-          console.error("Błąd podczas kopiowania do schowka:", err);
-          copyMessage.textContent = "Błąd podczas kopiowania do schowka";
-        }
-      }
+      //     setTimeout(function () {
+      //       copyMessage.textContent = "";
+      //     }, 1500);
+      //   } catch (err) {
+      //     console.error("Błąd podczas kopiowania do schowka:", err);
+      //     copyMessage.textContent = "Błąd podczas kopiowania do schowka";
+      //   }
+      // }
 
       //CREATE CONTACT
 
