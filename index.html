@@ -23,7 +23,7 @@
       @font-face {
         font-family: "AtypText";
         src: url("fonts/AtypText-Thin.woff2") format("woff2"),
-          url("fonts/AtypText-Regular.woff") format("woff");
+          url("fonts/AtypText-Thin.woff") format("woff");
       }
       * {
         margin: 0;
@@ -297,7 +297,7 @@
 
       /* POPUP STYLE */
 
-      /* .popup-link-element {
+      .popup-link-element {
         font-size: 13px;
         color: #5a5a5a;
         font-weight: 400;
@@ -319,15 +319,20 @@
       }
 
       #popup {
-        width: 230px;
-        height: 230px;
-        background-color: #fff;
-        padding: 10px;
+        width: 280px;
+        height: 180px;
+        padding: 12px;
+        background: linear-gradient(
+            0deg,
+            rgba(55, 60, 55, 0.05) 0%,
+            rgba(55, 60, 55, 0.05) 100%
+          ),
+          #fff;
       }
 
       #closeButton {
         cursor: pointer;
-      } */
+      }
     </style>
   </head>
   <body>
@@ -559,96 +564,106 @@
       </div>
     </div>
 
-    <!--POP UP ELEMENT-->
-    <!-- <div id="overlay">
-      <div id="popup" style="background-color: green">
-        <div style="text-align: right">
-          <img
-            src="assets/linkedin.png"
-            id="closeButton"
-            height="16"
-            width="16"
+    <!-- POP UP ELEMENT -->
+    <div id="overlay">
+      <div id="popup">
+        <div style="text-align: right; padding: 8px 8px 4px 0">
+          <svg
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 14 14"
+            width="16px"
+            height="16px"
             onclick="closePopup()"
-          />
+          >
+            <path
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"
+            />
+          </svg>
         </div>
 
-        <div style="vertical-align: middle; padding: 0px 8px 8px 0">
-          <img
-            src="mail.png"
-            alt=""
-            height="20"
-            width="20"
+        <div style="vertical-align: middle; padding: 10px 0 10px 0">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="26"
+            height="26"
+            viewBox="0 0 26 26"
+            fill="none"
             style="vertical-align: middle"
-          />
-          <a class="popup-link-element" href="mailto:"
-            ></a
           >
-        </div>
-        <div style="vertical-align: middle; padding: 8px 8px 8px 0">
-          <img
-            src="sms.png"
-            alt=""
-            height="20"
-            width="20"
-            style="vertical-align: middle"
-          />
-          <a class="popup-link-element" href="sms:+">SMS</a>
-        </div>
-        <div style="vertical-align: middle; padding: 8px 8px 8px 0">
-          <img
-            src="linkedin.png"
-            alt=""
-            height="20"
-            width="20"
-            style="vertical-align: middle"
-          />
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M2.70194 21.2629H12.9982H23.2981V14.3377H22.2233V20.1797H12.9982H3.77671V14.3377H2.70194V21.2629ZM22.406 12.9657H24.5556V4.19553H1.44446V12.9657H3.594V6.36189H22.406V12.9657ZM4.45534 7.08911L4.21133 7.3553L13 15.4116L21.7887 7.3553L21.5447 7.08911L13 14.9217L4.45534 7.08911Z"
+              fill="#373C37"
+            />
+          </svg>
           <a
             class="popup-link-element"
-            href=""
-            target="_blank"
-            ></a
+            href="mailto:aamash.mukhtar@skillspark.com"
+            style="font-family: 'AtypDisplay', sans-serif"
+            >aamash.mukhtar@skillspark.com</a
           >
         </div>
-
-        <div style="vertical-align: middle; padding: 8px 8px 8px 0">
-          <img
-            src="copyi.png"
-            alt=""
-            height="20"
-            width="20"
+        <div style="vertical-align: middle; padding: 10px 0 10px 0">
+          <svg
+            class="w-6 h-6 text-gray-800 dark:text-white"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 16 20"
+            width="26px"
+            height="26px"
             style="vertical-align: middle"
-          />
+          >
+            <path
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="1"
+              d="M2 5a1 1 0 0 0-1 1v12a.969.969 0 0 0 .933 1h8.1a1 1 0 0 0 1-1.033M10 1v4a1 1 0 0 1-1 1H5m10-4v12a.97.97 0 0 1-.933 1H5.933A.97.97 0 0 1 5 14V5.828a2 2 0 0 1 .586-1.414l2.828-2.828A2 2 0 0 1 9.828 1h4.239A.97.97 0 0 1 15 2Z"
+            />
+          </svg>
           <input
             type="text"
             id="myInput"
-            value=""
+            value="https://milosz13.github.io/e-card-skillspark/"
             style="
               margin: 0 10px;
-              width: 100px;
-              height: 20px;
-              border: 1px solid #5a5a5a;
-              font-family: Khand;
+              width: 120px;
+              height: 25px;
+              border-radius: 25px;
+              border: 1px solid #000;
               vertical-align: middle;
+              font-family: AtypDisplay, sans-serif;
+              padding: 0 3px;
             "
           />
           <button
             onclick="copyText()"
             style="
+              font-family: AtypDisplay, sans-serif;
               color: #5a5a5a;
-              font-family: Khand;
-              height: 20px;
-              vertical-align: middle;
+              padding: 5px 0px;
+              background-color: #cdcdc8;
+              border-radius: 25px;
+              border: 0px solid;
+              width: 60px;
             "
           >
-            Kopiuj
+            Copy
           </button>
           <span
-            style="color: #d21e1e; font-family: Khand; font-size: 10px"
+            style="color: #5a5a5a; font-family: Khand; font-size: 10px"
             id="copyMessage"
           ></span>
         </div>
-      </div> -->
-    <!-- </div> -->
+      </div>
+    </div>
     <script>
       function toggleFloatingButtons() {
         toggleFloatingButtonPosition();
@@ -829,35 +844,35 @@
             : "15px";
       }
 
-      //   POPUP
+      // POPUP;
 
-      //   function openPopup() {
-      //     document.getElementById("overlay").style.display = "flex";
-      //   }
+      function openPopup() {
+        document.getElementById("overlay").style.display = "flex";
+      }
 
-      // function closePopup() {
-      //   document.getElementById("overlay").style.display = "none";
-      // }
+      function closePopup() {
+        document.getElementById("overlay").style.display = "none";
+      }
 
       // Copy text
 
-      // function copyText() {
-      //   const inputField = document.getElementById("myInput");
-      //   const copyMessage = document.getElementById("copyMessage");
+      function copyText() {
+        const inputField = document.getElementById("myInput");
+        const copyMessage = document.getElementById("copyMessage");
 
-      //   try {
-      //     document.execCommand("copy");
+        try {
+          document.execCommand("copy");
 
-      //     copyMessage.textContent = "Skopiowano do schowka";
+          copyMessage.textContent = "copied to clipboard";
 
-      //     setTimeout(function () {
-      //       copyMessage.textContent = "";
-      //     }, 1500);
-      //   } catch (err) {
-      //     console.error("Błąd podczas kopiowania do schowka:", err);
-      //     copyMessage.textContent = "Błąd podczas kopiowania do schowka";
-      //   }
-      // }
+          setTimeout(function () {
+            copyMessage.textContent = "";
+          }, 1500);
+        } catch (err) {
+          console.error("error", err);
+          copyMessage.textContent = "error";
+        }
+      }
 
       //CREATE CONTACT
 
