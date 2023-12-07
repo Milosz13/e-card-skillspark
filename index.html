@@ -865,10 +865,10 @@
         const copyMessage = document.getElementById("copyMessage");
 
         try {
+          inputField.select();
           document.execCommand("copy");
 
           copyMessage.textContent = "copied to clipboard";
-
           setTimeout(function () {
             copyMessage.textContent = "";
           }, 1500);
