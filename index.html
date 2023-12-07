@@ -333,6 +333,49 @@
       #closeButton {
         cursor: pointer;
       }
+      .close-button {
+        text-align: right;
+        padding: 8px 8px 4px 0;
+      }
+
+      .popup-mail {
+        vertical-align: middle;
+        padding: 10px 0 10px 0;
+      }
+      .popup-copy-container {
+        vertical-align: middle;
+        padding: 10px 0 10px 0;
+      }
+
+      .popup-copy-container input {
+        margin: 0 8px;
+        width: 120px;
+        height: 25px;
+        border-radius: 25px;
+        border: 1px solid #000;
+        vertical-align: middle;
+        font-family: AtypDisplay, sans-serif;
+        padding: 0 3px;
+        font-size: 14px;
+      }
+
+      .popup-copy-container button {
+        font-family: AtypDisplay, sans-serif;
+        color: #5a5a5a;
+        padding: 5px 0px;
+        background-color: #cdcdc8;
+        border-radius: 25px;
+        border: 0px solid;
+        width: 60px;
+        cursor: pointer;
+        font-size: 14px;
+      }
+
+      .popup-copy-container span {
+        color: #5a5a5a;
+        font-family: "AtypDisplay", sans-serif;
+        font-size: 10px;
+      }
     </style>
   </head>
   <body>
@@ -567,7 +610,7 @@
     <!-- POP UP ELEMENT -->
     <div id="overlay">
       <div id="popup">
-        <div style="text-align: right; padding: 8px 8px 4px 0">
+        <div class="close-button">
           <svg
             aria-hidden="true"
             xmlns="http://www.w3.org/2000/svg"
@@ -587,7 +630,7 @@
           </svg>
         </div>
 
-        <div style="vertical-align: middle; padding: 10px 0 10px 0">
+        <div class="popup-mail">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="26"
@@ -610,7 +653,7 @@
             >aamash.mukhtar@skillspark.com</a
           >
         </div>
-        <div style="vertical-align: middle; padding: 10px 0 10px 0">
+        <div class="popup-copy-container">
           <svg
             class="w-6 h-6 text-gray-800 dark:text-white"
             aria-hidden="true"
@@ -633,38 +676,9 @@
             type="text"
             id="myInput"
             value="https://milosz13.github.io/e-card-skillspark/"
-            style="
-              margin: 0 8px;
-              width: 120px;
-              height: 25px;
-              border-radius: 25px;
-              border: 1px solid #000;
-              vertical-align: middle;
-              font-family: AtypDisplay, sans-serif;
-              padding: 0 3px;
-              font-size: 14px;
-            "
           />
-          <button
-            onclick="copyText()"
-            style="
-              font-family: AtypDisplay, sans-serif;
-              color: #5a5a5a;
-              padding: 5px 0px;
-              background-color: #cdcdc8;
-              border-radius: 25px;
-              border: 0px solid;
-              width: 60px;
-              cursor: pointer;
-              font-size: 14px;
-            "
-          >
-            Copy
-          </button>
-          <span
-            style="color: #5a5a5a; font-family: Khand; font-size: 10px"
-            id="copyMessage"
-          ></span>
+          <button onclick="copyText()">Copy</button>
+          <span id="copyMessage"></span>
         </div>
       </div>
     </div>
