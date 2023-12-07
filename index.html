@@ -863,19 +863,20 @@
       function copyText() {
         const inputField = document.getElementById("myInput");
         const copyMessage = document.getElementById("copyMessage");
-        try {
-          inputField.select();
-          document.execCommand("copy");
-          inputField.blur();
 
-          copyMessage.textContent = "copied to clipboard";
-          setTimeout(function () {
-            copyMessage.textContent = "";
-          }, 1500);
-        } catch (err) {
-          console.error("error", err);
-          copyMessage.textContent = "error";
-        }
+        navigator.clipboard
+          .writeText(inputField.value)
+          .then(() => {
+            copyMessage.textContent = "copied to clipboard";
+
+            setTimeout(function () {
+              copyMessage.textContent = "";
+            }, 1500);
+          })
+          .catch((err) => {
+            console.error("error", err);
+            copyMessage.textContent = "error";
+          });
       }
 
       //CREATE CONTACT
