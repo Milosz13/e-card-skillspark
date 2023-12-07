@@ -863,10 +863,10 @@
       function copyText() {
         const inputField = document.getElementById("myInput");
         const copyMessage = document.getElementById("copyMessage");
-
         try {
           inputField.select();
           document.execCommand("copy");
+          inputField.blur();
 
           copyMessage.textContent = "copied to clipboard";
           setTimeout(function () {
