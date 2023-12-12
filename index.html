@@ -74,6 +74,10 @@
         vertical-align: middle;
       }
 
+      .personal-img {
+        transition: transform 1s ease-out;
+      }
+
       .personal-container button {
         width: 160px;
         height: 34px;
@@ -82,12 +86,14 @@
         line-height: 18px;
         vertical-align: middle;
         position: relative;
+        transition: transform 0.8s ease-out;
       }
 
       .personal-container button svg {
         position: absolute;
         top: 2px;
         left: 10px;
+        transition: transform 0.8s ease-in-out;
       }
 
       .personal-container button span {
@@ -272,6 +278,7 @@
         margin-right: 8px;
         width: 26px;
         height: 26px;
+        transition: transform 1s ease-out;
       }
 
       .floating-buttons {
@@ -704,7 +711,6 @@
       //personal img animation
       function animatePersonalImg() {
         let personalImg = document.querySelector(".personal-img");
-        personalImg.style.transition = "transform 1s ease-out";
 
         let isTranslated =
           personalImg.style.transform.includes("translateX(212px)");
@@ -717,7 +723,6 @@
       //arrow img animation
       function rotateArrow() {
         let arrow = document.querySelector(".personal-container button svg");
-        arrow.style.transition = "transform 0.8s ease-in-out";
 
         let isRotated = arrow.style.transform.includes("rotate(-180deg)");
 
@@ -792,7 +797,6 @@
       //move button animation
       function animateButton() {
         let button = document.querySelector(".personal-container button");
-        button.style.transition = "transform .8s ease-out";
 
         let isTranslated =
           button.style.transform.includes("translateX(-210px)");
@@ -807,8 +811,6 @@
         let dataElements = document.querySelectorAll(".data-element");
         dataElements.forEach(function (dataElement) {
           let svgInDataElement = dataElement.querySelector("svg");
-
-          svgInDataElement.style.transition = "transform 1s ease-out";
 
           let isTranslated =
             svgInDataElement.style.transform.includes("translateX(1000%)");
@@ -834,18 +836,17 @@
           ? "٣٤٣٩٤١٤٥٥١٧٩"
           : "+971 55 414 9343";
 
+        arabicTel.style.lineHeight = "18px";
+        arabicTel.style.top = isDefaultText ? "15px" : "12px";
+
         if (!isDefaultText) {
           arabicTel.style.fontFamily = "AtypText";
           arabicTel.style.fontWeight = "400";
-          arabicTel.style.lineHeight = "18px";
           arabicTel.style.letterSpacing = "0";
-          arabicTel.style.top = "12px";
         } else {
           arabicTel.style.fontFamily = "Tajawal";
           arabicTel.style.fontWeight = "300";
-          arabicTel.style.lineHeight = "18px";
           arabicTel.style.letterSpacing = "2.7px";
-          arabicTel.style.top = "15px";
         }
       }
 
@@ -853,7 +854,6 @@
       function toggleFloatingButtonPosition() {
         let floatingButtons = document.getElementById("floatingButtons");
 
-        floatingButtons.style.transition = "right 1s ease-in-out";
         floatingButtons.style.right =
           parseFloat(
             getComputedStyle(floatingButtons).right.replace("px", "")
@@ -889,7 +889,7 @@
           })
           .catch((err) => {
             console.error("error", err);
-            copyMessage.textContent = "error";
+            copyMessage.textContent = "error failed to copy";
           });
       }
 
