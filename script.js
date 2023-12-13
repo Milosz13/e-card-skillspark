@@ -209,18 +209,17 @@ function copyText() {
   navigator.clipboard
     .writeText(inputField.value)
     .then(() => {
-      copyMessage.textContent = "copied to clipboard";
+      copyMessage.textContent = "Copied to clipboard";
 
       setTimeout(function () {
         copyMessage.textContent = "";
       }, 1500);
     })
     .catch((err) => {
-      console.error("error", err);
-      copyMessage.textContent = "error failed to copy";
+      console.error("Error:", err);
+      copyMessage.textContent = "Error: Failed to copy";
     });
 }
-
 //CREATE CONTACT
 
 function createContact() {
@@ -232,7 +231,7 @@ function createContact() {
   const vCardContent =
     "BEGIN:VCARD\n" +
     "VERSION:3.0\n" +
-    "ORG:" +
+    "FN:" +
     contactName +
     "\n" +
     "TEL:" +
