@@ -1,13 +1,11 @@
 let isAnimationForward = true;
 
 function toggleFloatingButtons(button) {
-  // Disable the button
   button.disabled = true;
 
-  // Wait for one second (1000 milliseconds) and then enable the button
   setTimeout(function () {
     button.disabled = false;
-  }, 800);
+  }, 1000);
 
   toggleFloatingButtonPosition();
   toggleLogo();
