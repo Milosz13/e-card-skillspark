@@ -223,32 +223,34 @@ function copyText() {
 
 //CREATE CONTACT
 
-async function createContact() {
+function createContact() {
   const contactName = "Aamash Mukhtar";
   const phoneNumber = "+971554149343";
   const emailAddress = "aamash.mukhtar@skillspark.com";
   const homepage = "https://www.skillspark.com/";
 
-  const contactProperties = [
-    { name: "name", value: contactName },
-    { name: "tel", value: phoneNumber, type: "work" },
-    { name: "email", value: emailAddress, type: "work" },
-    { name: "url", value: homepage, type: "work" },
-  ];
+  const vCardContent =
+    "BEGIN:VCARD\n" +
+    "VERSION:3.0\n" +
+    "ORG:" +
+    contactName +
+    "\n" +
+    "TEL:" +
+    phoneNumber +
+    "\n" +
+    "EMAIL:" +
+    emailAddress +
+    "\n" +
+    (homepage ? "URL:" + homepage + "\n" : "") +
+    "END:VCARD";
 
-  const options = {
-    multiple: false,
-    includeEmail: true,
-    includePhoneNumber: true,
+  const blob = new Blob([vCardContent], { type: "text/vcard" });
+
+  const link = document.getElementById("downloadLink");
+  link.href = window.URL.createObjectURL(blob);
+  link.download = "Contacts.vcf";
+
+  link.onclick = function () {
+    document.getElementById("overlay").style.display = "none";
   };
-
-  try {
-    const contacts = await navigator.contacts.select(
-      contactProperties,
-      options
-    );
-    console.log("Selected contacts:", contacts);
-  } catch (error) {
-    console.error("Error selecting contacts:", error);
-  }
 }
