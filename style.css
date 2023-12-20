@@ -159,8 +159,9 @@
     font-family: "AtypDisplay", sans-serif;
     letter-spacing: 0.8px;
     position: absolute;
-    right: 50%;
+    right: 60%;
     transition: all 1s;
+    padding-right: 60px;
   }
 
   #position-ang {
@@ -169,8 +170,10 @@
     font-family: "AtypText", sans-serif;
     position: absolute;
     top: 60px;
-    right: 60%;
+    right: 70%;
     transition: all 1s;
+    padding-right: 60px;
+
   }
 
   #name-arabic {

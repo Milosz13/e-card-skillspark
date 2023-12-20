@@ -201,22 +201,23 @@ function closePopup() {
 // Copy text
 
 function copyText() {
-  const inputField = document.getElementById("myInput");
+  const inputField = document.getElementById("myInput").select();
   const copyMessage = document.getElementById("copyMessage");
 
-  navigator.clipboard
-    .writeText(inputField.value)
-    .then(() => {
-      copyMessage.textContent = "Copied to clipboard";
+  document.execCommand(`copy`);
+  // navigator.clipboard
+  //   .writeText(inputField.value)
+  //   .then(() => {
+  //     copyMessage.textContent = "Copied to clipboard";
 
-      setTimeout(function () {
-        copyMessage.textContent = "";
-      }, 1500);
-    })
-    .catch((err) => {
-      console.error("Error:", err);
-      copyMessage.textContent = "Error: Failed to copy";
-    });
+  //     setTimeout(function () {
+  //       copyMessage.textContent = "";
+  //     }, 1500);
+  //   })
+  //   .catch((err) => {
+  //     console.error("Error:", err);
+  //     copyMessage.textContent = "Error: Failed to copy";
+  //   });
 }
 //CREATE CONTACT
 
